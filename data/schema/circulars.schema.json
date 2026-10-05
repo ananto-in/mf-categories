@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ananto-in/mf-categories/data/schema/circulars.schema.json",
+  "title": "Circulars",
+  "type": "object",
+  "required": ["circulars"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "circulars": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "number", "title", "date", "url"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+          "number": { "type": "string", "minLength": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "date": { "type": "string", "format": "date" },
+          "url": { "type": "string", "format": "uri" },
+          "sha256": { "oneOf": [{ "type": "string", "pattern": "^[a-f0-9]{64}$" }, { "type": "null" }] },
+          "supersedes": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" }
+          }
+        }
+      }
+    }
+  }
+}

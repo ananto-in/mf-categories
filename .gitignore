@@ -147,3 +147,12 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# PHP
+/vendor/
+composer.lock
+.phpunit.cache/
+.phpunit.result.cache
+
+# Local working plans (not part of the published repo)
+docs/plans/

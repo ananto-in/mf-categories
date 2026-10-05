@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ananto-in/mf-categories/data/schema/aliases.schema.json",
+  "title": "Aliases",
+  "description": "AMFI scheme-data category labels mapped to category IDs.",
+  "type": "object",
+  "required": ["aliases"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "source"],
+        "additionalProperties": false,
+        "properties": {
+          "label": { "type": "string", "minLength": 1 },
+          "category": { "type": "string", "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)?$" },
+          "candidates": {
+            "type": "array",
+            "minItems": 2,
+            "uniqueItems": true,
+            "items": { "type": "string", "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)?$" }
+          },
+          "source": { "enum": ["amfi_scheme_data"] },
+          "seen_from": { "type": "string", "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$" }
+        },
+        "oneOf": [{ "required": ["category"] }, { "required": ["candidates"] }]
+      }
+    }
+  }
+}

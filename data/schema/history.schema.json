@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ananto-in/mf-categories/data/schema/history.schema.json",
+  "title": "History",
+  "description": "Category lifecycle events. `from` and `to` are always arrays of category IDs.",
+  "type": "object",
+  "required": ["events"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "from", "to", "effective", "circular"],
+        "additionalProperties": false,
+        "properties": {
+          "type": { "enum": ["rename", "split", "merge", "replace", "discontinue", "new"] },
+          "from": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "type": "string", "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)?$" }
+          },
+          "to": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "type": "string", "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)?$" }
+          },
+          "effective": { "type": "string", "format": "date" },
+          "circular": { "type": "string", "minLength": 1 },
+          "note": { "type": "string" }
+        },
+        "allOf": [
+          {
+            "if": { "properties": { "type": { "const": "new" } } },
+            "then": { "properties": { "from": { "maxItems": 0 }, "to": { "minItems": 1 } } }
+          },
+          {
+            "if": { "properties": { "type": { "const": "discontinue" } } },
+            "then": { "properties": { "from": { "minItems": 1 }, "to": { "maxItems": 0 } } }
+          },
+          {
+            "if": { "properties": { "type": { "enum": ["rename", "replace"] } } },
+            "then": { "properties": { "from": { "minItems": 1, "maxItems": 1 }, "to": { "minItems": 1, "maxItems": 1 } } }
+          },
+          {
+            "if": { "properties": { "type": { "const": "split" } } },
+            "then": { "properties": { "from": { "minItems": 1, "maxItems": 1 }, "to": { "minItems": 2 } } }
+          },
+          {
+            "if": { "properties": { "type": { "const": "merge" } } },
+            "then": { "properties": { "from": { "minItems": 2 }, "to": { "minItems": 1, "maxItems": 1 } } }
+          }
+        ]
+      }
+    }
+  }
+}

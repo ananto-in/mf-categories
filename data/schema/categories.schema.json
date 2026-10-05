@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ananto-in/mf-categories/data/schema/categories.schema.json",
+  "title": "Categories",
+  "type": "object",
+  "required": ["categories"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "categories": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/category" }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)?$"
+    },
+    "date": { "type": "string", "format": "date" },
+    "range": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "min": { "type": "number" },
+        "max": { "type": "number" }
+      },
+      "anyOf": [{ "required": ["min"] }, { "required": ["max"] }]
+    },
+    "category": {
+      "type": "object",
+      "required": ["id", "parent", "level", "name", "status", "valid_from", "valid_to", "circular"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "parent": { "oneOf": [{ "$ref": "#/$defs/id" }, { "type": "null" }] },
+        "level": { "enum": ["broad", "specific"] },
+        "name": { "type": "string", "minLength": 1 },
+        "short_name": { "type": "string", "minLength": 1 },
+        "status": { "enum": ["active", "superseded", "discontinued"] },
+        "valid_from": { "oneOf": [{ "$ref": "#/$defs/date" }, { "type": "null" }] },
+        "valid_to": { "oneOf": [{ "$ref": "#/$defs/date" }, { "type": "null" }] },
+        "circular": { "oneOf": [{ "type": "string", "minLength": 1 }, { "type": "null" }] },
+        "scheme_type_description": { "oneOf": [{ "type": "string" }, { "type": "null" }] },
+        "characteristics": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "min_allocation": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["asset", "min_pct", "basis"],
+                "additionalProperties": false,
+                "properties": {
+                  "asset": { "type": "string", "minLength": 1 },
+                  "min_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+                  "basis": { "enum": ["total_assets", "net_assets"] }
+                }
+              }
+            },
+            "allocation_range": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["asset", "min_pct", "max_pct"],
+                "additionalProperties": false,
+                "properties": {
+                  "asset": { "type": "string", "minLength": 1 },
+                  "min_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+                  "max_pct": { "type": "number", "minimum": 0, "maximum": 100 }
+                }
+              }
+            },
+            "macaulay_duration_years": { "$ref": "#/$defs/range" },
+            "max_stocks": { "type": "integer", "minimum": 1 },
+            "strategy": { "type": "string" }
+          }
+        },
+        "former_names": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}
