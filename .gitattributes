@@ -1,0 +1,13 @@
+* text=auto eol=lf
+
+# Keep Composer/npm archives small: ship only data, source, licenses and README
+/.github        export-ignore
+/docs           export-ignore
+/scripts        export-ignore
+/tests          export-ignore
+/.gitattributes export-ignore
+/.gitignore     export-ignore
+/AGENTS.md      export-ignore
+/CLAUDE.md      export-ignore
+/phpunit.xml.dist export-ignore
+/package-lock.json export-ignore

@@ -32,13 +32,55 @@ SEBI renames, splits and discontinues scheme categories from time to time (most 
 - Composer: `ananto-in/mf-categories`
 - npm: `@ananto-in/mf-categories`
 
+## API
+
+The PHP and JS packages expose the same operations. `Category` is a typed, immutable object with camelCase properties
+(`id`, `parent`, `level`, `name`, `shortName`, `group`, `status`, `validFrom`, `validTo`, `circular`,
+`schemeTypeDescription`, `description`, `characteristics`, `formerNames`, `note`). Rules, history, glide paths,
+circulars and meta are returned as the plain objects found in the JSON files.
+
+| Operation | Returns |
+|---|---|
+| `all()` | every category, including superseded and discontinued |
+| `find(id)` | a category or null |
+| `children(id)` | direct children |
+| `active(on?)` | categories in force on a date (today by default); `validFrom <= on < validTo` |
+| `resolveLabel(label)` | the category an AMFI label maps to; null if unknown or ambiguous |
+| `candidatesForLabel(label)` | every category a label can mean (several for an ambiguous label) |
+| `successors(id)` | categories that continue a split, merged or replaced category (a rename keeps its id) |
+| `history(id?)` | lifecycle events for a category, or all events |
+| `rulesFor(id)` | rules on the category or any of its parents |
+| `glidePath(id)` | Life Cycle glide path, or null |
+| `circular(id)` / `meta()` | source circular / dataset version |
+
+Label matching ignores case and repeated or surrounding whitespace.
+
+### PHP
+
+```php
+use Ananto\MfCategories\Categories;
+
+$categories = new Categories();
+$categories->resolveLabel('Income/Debt Oriented Schemes - Short Term Fund')?->id; // "debt.short_term"
+$categories->find('debt.short_term')?->formerNames;                              // ["Short Duration Fund"]
+$categories->active('2026-02-25');                                               // categories before the 2026 circular
+```
+
+Each data file is read on first use and cached for the rest of the process: the first label lookup costs about a
+millisecond, later lookups under a microsecond, and about 1.5 MB of memory. Create one `Categories` per process
+(or register it as a shared service); instances share the parsed data.
+
 ## Development
 
 ```bash
 npm install
 npm run validate   # schema and integrity checks on data/
 npm run lint:words # wording rules for README and data
-npm test
+npm test           # JS and dataset tests
+
+composer install
+composer test      # PHPUnit
+composer cs        # PSR-12
 ```
 
 ## Disclaimer

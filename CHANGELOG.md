@@ -26,6 +26,11 @@ history entries are minor; corrections are patches.
     The oldest bare labels (`Income`, `Growth`, `Balanced`, ...) and close-ended debt labels
     (`Fixed Term Plan`, `Other Debt Scheme`) are deliberately not mapped.
 
+- PHP package (`ananto-in/mf-categories`, PHP >= 8.1, no runtime dependencies): `Categories` with `all`, `find`,
+  `children`, `active`, `resolveLabel`, `candidatesForLabel`, `successors`, `history`, `rulesFor`, `glidePath`,
+  `circular`, `meta`, and an immutable `Category`. Files are loaded lazily and cached per process.
+- PHP CI job (PHP 8.1 to 8.4: PSR-12 and PHPUnit).
+
 ### Known gaps
 - Pre-2026 names (renames and the two superseded categories) come from the 2017 framework and the AMFI labels
   that mirror it; the 6 Oct 2017 circular text has not yet been compared line by line.

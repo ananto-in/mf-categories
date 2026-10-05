@@ -20,7 +20,7 @@ Guidance for AI coding agents (and humans) working in this repository.
 
 - `data/*.json` - dataset; `data/schema/*.schema.json` - JSON Schema (2020-12) for each file
 - `scripts/lib/dataset.mjs` - loads the dataset, runs schema + integrity checks; `scripts/lib/words.mjs` - banned-word check
-- `tests/js/` - Vitest; `tests/php/` - PHPUnit (not yet)
+- `tests/js/` - Vitest; `tests/php/` - PHPUnit; `src/php/` - PHP package
 - `docs/plans/` - local working plans (git-ignored)
 
 ## Commands
@@ -32,7 +32,13 @@ npm run lint:words   # banned-word check on public-facing files
 npm test             # vitest
 ```
 
-PHP package, release workflow and PHP CI job are not built yet (see the plan's phases).
+```bash
+composer install
+composer test        # PHPUnit (tests/php)
+composer cs          # phpcs PSR-12 on src/php
+```
+
+PHP package: `src/php/Category.php` (immutable value object) and `src/php/Categories.php` (lazy, process-cached reader). The JS package must mirror its API exactly (see the README API table). The release workflow and the JS package are not built yet (see the plan's phases).
 
 ## Source material
 
