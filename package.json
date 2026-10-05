@@ -11,6 +11,17 @@
     "type": "git",
     "url": "git+https://github.com/ananto-in/mf-categories.git"
   },
+  "main": "./src/js/index.js",
+  "types": "./src/js/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/js/index.d.ts",
+      "default": "./src/js/index.js"
+    },
+    "./data/*.json": "./data/*.json",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
   "files": ["data", "src/js", "LICENSE", "LICENSE-DATA", "README.md"],
   "scripts": {
     "validate": "node scripts/validate-data.mjs",
@@ -23,6 +34,6 @@
     "vitest": "^3.0.0"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20.10"
   }
 }

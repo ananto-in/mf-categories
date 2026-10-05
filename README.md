@@ -66,6 +66,30 @@ $categories->find('debt.short_term')?->formerNames;                             
 $categories->active('2026-02-25');                                               // categories before the 2026 circular
 ```
 
+### JavaScript
+
+ES modules, no dependencies, TypeScript types included. Needs Node 20.10+ (JSON import attributes) or a bundler
+that supports them (Vite, webpack 5, esbuild, Rollup).
+
+```js
+import categories, { resolveLabel, active } from '@ananto-in/mf-categories';
+
+resolveLabel('Income/Debt Oriented Schemes - Short Term Fund')?.id; // "debt.short_term"
+categories.find('debt.short_term')?.formerNames;                    // ["Short Duration Fund"]
+active('2026-02-25');                                               // categories before the 2026 circular
+```
+
+Every operation is available as a named export and on the default export. Dates can be a `Date` (its local calendar
+day) or a `YYYY-MM-DD` string; anything else throws a `RangeError` (the PHP package throws `InvalidArgumentException`).
+`createCategories(dataset)` builds the same API over your own copy of the data.
+
+The JS package parses all data files when imported and adds about 121 KB (14 KB gzipped) to a bundle. For a front end
+that needs only a label or two, fetch the JSON files you need from the package's `data/` directory instead.
+
+Both packages are tested against the same cases in `tests/contract/api-contract.json`, so they behave identically.
+
+### PHP: performance
+
 Each data file is read on first use and cached for the rest of the process: the first label lookup costs about a
 millisecond, later lookups under a microsecond, and about 1.5 MB of memory. Create one `Categories` per process
 (or register it as a shared service); instances share the parsed data.

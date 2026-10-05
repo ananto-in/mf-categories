@@ -38,7 +38,7 @@ composer test        # PHPUnit (tests/php)
 composer cs          # phpcs PSR-12 on src/php
 ```
 
-PHP package: `src/php/Category.php` (immutable value object) and `src/php/Categories.php` (lazy, process-cached reader). The JS package must mirror its API exactly (see the README API table). The release workflow and the JS package are not built yet (see the plan's phases).
+PHP package: `src/php/Category.php` (immutable value object) and `src/php/Categories.php` (lazy, process-cached reader). JS package: `src/js/index.js` with hand-written types in `src/js/index.d.ts`. The two must behave identically: every behaviour change goes into `tests/contract/api-contract.json` (run by `tests/php/ContractTest.php` and `tests/js/contract.test.js`), and the README API table must stay accurate. The release workflow is not built yet (see the plan's phases).
 
 ## Source material
 

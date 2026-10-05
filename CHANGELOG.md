@@ -30,6 +30,10 @@ history entries are minor; corrections are patches.
   `children`, `active`, `resolveLabel`, `candidatesForLabel`, `successors`, `history`, `rulesFor`, `glidePath`,
   `circular`, `meta`, and an immutable `Category`. Files are loaded lazily and cached per process.
 - PHP CI job (PHP 8.1 to 8.4: PSR-12 and PHPUnit).
+- JavaScript package (`@ananto-in/mf-categories`, ES modules, Node >= 20.10, TypeScript types, no dependencies) with
+  the same operations as the PHP package, as named exports, a default export and `createCategories(dataset)`.
+- Shared API contract (`tests/contract/api-contract.json`) run by both the PHP and JS tests.
+- JS CI matrix: Node 20, 22 and 24.
 
 ### Known gaps
 - Pre-2026 names (renames and the two superseded categories) come from the 2017 framework and the AMFI labels
