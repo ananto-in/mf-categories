@@ -68,13 +68,23 @@ const integrityErrors = (ds) => {
     if (c.level === 'broad') {
       if (c.parent !== null) errors.push(`categories.json: broad category "${c.id}" must have parent null`);
       if (c.id.includes('.')) errors.push(`categories.json: broad category "${c.id}" must not contain a dot`);
-    } else if (c.level === 'specific') {
+    } else {
+      const expectedParentLevel = c.level === 'sub' ? 'specific' : 'broad';
+      const expectedDots = c.level === 'sub' ? 2 : 1;
       const parent = byId.get(c.parent);
       if (!parent) errors.push(`categories.json: "${c.id}" has unknown parent "${c.parent}"`);
-      else if (parent.level !== 'broad') errors.push(`categories.json: parent of "${c.id}" must be a broad category`);
+      else if (parent.level !== expectedParentLevel) {
+        errors.push(`categories.json: parent of "${c.id}" must be a ${expectedParentLevel} category`);
+      }
       if (c.parent && !c.id.startsWith(`${c.parent}.`)) {
         errors.push(`categories.json: id "${c.id}" must start with its parent "${c.parent}."`);
       }
+      if (c.id.split('.').length - 1 !== expectedDots) {
+        errors.push(`categories.json: ${c.level} category "${c.id}" must have ${expectedDots + 1} id segments`);
+      }
+    }
+    if (c.group !== undefined && c.level !== 'sub') {
+      errors.push(`categories.json: only sub categories may have a group ("${c.id}")`);
     }
     if (c.status === 'active' && c.valid_to !== null) errors.push(`categories.json: active "${c.id}" must have valid_to null`);
     if (c.status !== 'active' && c.valid_to === null) errors.push(`categories.json: ${c.status} "${c.id}" needs valid_to`);

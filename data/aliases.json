@@ -1,1 +1,592 @@
-{ "aliases": [] }
+{
+  "aliases": [
+    {
+      "label": "Debt Scheme - Banking and PSU Fund",
+      "category": "debt.banking_and_psu_debt",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Debt Scheme - Corporate Bond Fund",
+      "category": "debt.corporate_bond",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Debt Scheme - Credit Risk Fund",
+      "category": "debt.credit_risk",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Debt Scheme - Dynamic Bond",
+      "category": "debt.dynamic_term",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Debt Scheme - Gilt Fund",
+      "category": "debt.gilt",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Debt Scheme - Liquid Fund",
+      "category": "debt.liquid",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Debt Scheme - Long Duration Fund",
+      "category": "debt.long_term",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Debt Scheme - Low Duration Fund",
+      "category": "debt.ultra_short_to_short_term",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Debt Scheme - Medium Duration Fund",
+      "category": "debt.medium_term",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Debt Scheme - Medium to Long Duration Fund",
+      "category": "debt.medium_to_long_term",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Debt Scheme - Money Market Fund",
+      "category": "debt.money_market",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Debt Scheme - Overnight Fund",
+      "category": "debt.overnight",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Debt Scheme - Short Duration Fund",
+      "category": "debt.short_term",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Debt Scheme - Ultra Short Duration Fund",
+      "category": "debt.ultra_short_term",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Scheme - Contra Fund",
+      "category": "equity.contra",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Scheme - Dividend Yield Fund",
+      "category": "equity.dividend_yield",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Scheme - ELSS",
+      "category": "equity.elss",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Scheme - Flexi Cap Fund",
+      "category": "equity.flexi_cap",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Scheme - Focused Fund",
+      "category": "equity.focused",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Scheme - Large & Mid Cap Fund",
+      "category": "equity.large_mid_cap",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Scheme - Large Cap Fund",
+      "category": "equity.large_cap",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Scheme - Mid Cap Fund",
+      "category": "equity.mid_cap",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Scheme - Multi Cap Fund",
+      "category": "equity.multi_cap",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Scheme - Sectoral/ Thematic",
+      "candidates": [
+        "equity.sectoral",
+        "equity.thematic"
+      ],
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Scheme - Small Cap Fund",
+      "category": "equity.small_cap",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Scheme - Value Fund",
+      "category": "equity.value",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Schemes - Contra Fund",
+      "category": "equity.contra",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Schemes - Dividend Yield Fund",
+      "category": "equity.dividend_yield",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Schemes - ELSS- Tax Saver Fund",
+      "category": "equity.elss",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Schemes - Flexi Cap Fund",
+      "category": "equity.flexi_cap",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Schemes - Focused Fund",
+      "category": "equity.focused",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Schemes - Large & Mid Cap Fund",
+      "category": "equity.large_mid_cap",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Schemes - Large Cap Fund",
+      "category": "equity.large_cap",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Schemes - Mid Cap Fund",
+      "category": "equity.mid_cap",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Schemes - Multi Cap Fund",
+      "category": "equity.multi_cap",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Schemes - Sectoral Fund",
+      "category": "equity.sectoral",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Schemes - Small Cap Fund",
+      "category": "equity.small_cap",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Schemes - Thematic Fund",
+      "category": "equity.thematic",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Equity Schemes - Value Fund",
+      "category": "equity.value",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Exchange Traded Funds (ETFs) - Debt ETF",
+      "category": "other.index_funds_etfs",
+      "note": "Passive schemes are grouped under Other Schemes; SEBI defines Index Funds / ETFs by index tracking, so commodity and other ETFs are mapped here as the closest category.",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Exchange Traded Funds (ETFs) - Equity ETF",
+      "category": "other.index_funds_etfs",
+      "note": "Passive schemes are grouped under Other Schemes; SEBI defines Index Funds / ETFs by index tracking, so commodity and other ETFs are mapped here as the closest category.",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Exchange Traded Funds (ETFs) - ETFs investing overseas",
+      "category": "other.index_funds_etfs",
+      "note": "Passive schemes are grouped under Other Schemes; SEBI defines Index Funds / ETFs by index tracking, so commodity and other ETFs are mapped here as the closest category.",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Exchange Traded Funds (ETFs) - Gold ETF",
+      "category": "other.index_funds_etfs",
+      "note": "Passive schemes are grouped under Other Schemes; SEBI defines Index Funds / ETFs by index tracking, so commodity and other ETFs are mapped here as the closest category.",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Exchange Traded Funds (ETFs) - Hybrid ETF",
+      "category": "other.index_funds_etfs",
+      "note": "Passive schemes are grouped under Other Schemes; SEBI defines Index Funds / ETFs by index tracking, so commodity and other ETFs are mapped here as the closest category.",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Exchange Traded Funds (ETFs) - Other ETF",
+      "category": "other.index_funds_etfs",
+      "note": "Passive schemes are grouped under Other Schemes; SEBI defines Index Funds / ETFs by index tracking, so commodity and other ETFs are mapped here as the closest category.",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Exchange Traded Funds (ETFs) - Silver ETF",
+      "category": "other.index_funds_etfs",
+      "note": "Passive schemes are grouped under Other Schemes; SEBI defines Index Funds / ETFs by index tracking, so commodity and other ETFs are mapped here as the closest category.",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Fund of Funds Scheme (Domestic) - Fund of Funds Scheme (Domestic)",
+      "category": "other.fof",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Hybrid Scheme - Aggressive Hybrid Fund",
+      "category": "hybrid.aggressive_hybrid",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Hybrid Scheme - Arbitrage Fund",
+      "category": "hybrid.arbitrage",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Hybrid Scheme - Balanced Hybrid Fund",
+      "category": "hybrid.balanced_hybrid",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Hybrid Scheme - Conservative Hybrid Fund",
+      "category": "hybrid.conservative_hybrid",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Hybrid Scheme - Dynamic Asset Allocation or Balanced Advantage",
+      "category": "hybrid.dynamic_asset_allocation",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Hybrid Scheme - Equity Savings",
+      "category": "hybrid.equity_savings",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Hybrid Scheme - Multi Asset Allocation",
+      "category": "hybrid.multi_asset_allocation",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Hybrid Schemes - Aggressive Hybrid Fund",
+      "category": "hybrid.aggressive_hybrid",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Hybrid Schemes - Arbitrage Fund",
+      "category": "hybrid.arbitrage",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Hybrid Schemes - Balanced Advantage Fund/ Dynamic Asset Allocation",
+      "category": "hybrid.dynamic_asset_allocation",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Hybrid Schemes - Balanced Hybrid Fund",
+      "category": "hybrid.balanced_hybrid",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Hybrid Schemes - Conservative Hybrid Fund",
+      "category": "hybrid.conservative_hybrid",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Hybrid Schemes - Equity Savings Fund",
+      "category": "hybrid.equity_savings",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Hybrid Schemes - Multi Asset Allocation Fund",
+      "category": "hybrid.multi_asset_allocation",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Income/Debt Oriented Schemes - 10-year Constant Maturity Gilt Fund",
+      "category": "debt.gilt_10y_constant_maturity",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Income/Debt Oriented Schemes - Banking and PSU Debt Fund",
+      "category": "debt.banking_and_psu_debt",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Income/Debt Oriented Schemes - Corporate Bond Fund",
+      "category": "debt.corporate_bond",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Income/Debt Oriented Schemes - Credit Risk Fund",
+      "category": "debt.credit_risk",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Income/Debt Oriented Schemes - Dynamic Term Fund",
+      "category": "debt.dynamic_term",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Income/Debt Oriented Schemes - Floating Interest Rates Fund",
+      "category": "debt.floating_interest_rates",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Income/Debt Oriented Schemes - Gilt Fund",
+      "category": "debt.gilt",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Income/Debt Oriented Schemes - Liquid Fund",
+      "category": "debt.liquid",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Income/Debt Oriented Schemes - Long Term Fund",
+      "category": "debt.long_term",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Income/Debt Oriented Schemes - Medium Term Fund",
+      "category": "debt.medium_term",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Income/Debt Oriented Schemes - Medium to Long Term Fund",
+      "category": "debt.medium_to_long_term",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Income/Debt Oriented Schemes - Money Market Fund",
+      "category": "debt.money_market",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Income/Debt Oriented Schemes - Overnight Fund",
+      "category": "debt.overnight",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Income/Debt Oriented Schemes - Sectoral Fund",
+      "category": "debt.sectoral",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Income/Debt Oriented Schemes - Short Term Fund",
+      "category": "debt.short_term",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Income/Debt Oriented Schemes - Ultra Short Term Fund",
+      "category": "debt.ultra_short_term",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Income/Debt Oriented Schemes - Ultra Short to Short Term Fund",
+      "category": "debt.ultra_short_to_short_term",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Index Funds - Debt Funds",
+      "category": "other.index_funds_etfs",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Index Funds - Equity Funds",
+      "category": "other.index_funds_etfs",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Index Funds - Hybrid Fund",
+      "category": "other.index_funds_etfs",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Life Cycle Funds - Life Cycle Fund with Maturity of 10 Years",
+      "category": "life_cycle.maturity_10y",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Life Cycle Funds - Life Cycle Fund with Maturity of 15 Years",
+      "category": "life_cycle.maturity_15y",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Life Cycle Funds - Life Cycle Fund with Maturity of 20 Years",
+      "category": "life_cycle.maturity_20y",
+      "source": "amfi_scheme_data",
+      "note": "Derived from the label pattern; not yet seen in AMFI scheme data."
+    },
+    {
+      "label": "Life Cycle Funds - Life Cycle Fund with Maturity of 25 Years",
+      "category": "life_cycle.maturity_25y",
+      "source": "amfi_scheme_data",
+      "note": "Derived from the label pattern; not yet seen in AMFI scheme data."
+    },
+    {
+      "label": "Life Cycle Funds - Life Cycle Fund with Maturity of 30 Years",
+      "category": "life_cycle.maturity_30y",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Life Cycle Funds - Life Cycle Fund with Maturity of 5 Years",
+      "category": "life_cycle.maturity_5y",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Other Scheme - FoF Domestic",
+      "category": "other.fof",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Other Scheme - FoF Overseas",
+      "category": "other.fof",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Other Scheme - Gold ETF",
+      "category": "other.index_funds_etfs",
+      "note": "Passive schemes are grouped under Other Schemes; SEBI defines Index Funds / ETFs by index tracking, so commodity and other ETFs are mapped here as the closest category.",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Other Scheme - Index Funds",
+      "category": "other.index_funds_etfs",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Other Scheme - Other ETFs",
+      "category": "other.index_funds_etfs",
+      "note": "Passive schemes are grouped under Other Schemes; SEBI defines Index Funds / ETFs by index tracking, so commodity and other ETFs are mapped here as the closest category.",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Overseas Fund of Funds - Fund of Funds investing overseas",
+      "category": "other.fof",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Solution Oriented Scheme - Children s Fund",
+      "category": "solution_oriented.children",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Solution Oriented Scheme - Retirement Fund",
+      "category": "solution_oriented.retirement",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    },
+    {
+      "label": "Solution Oriented Schemes ** - Retirement Fund",
+      "category": "solution_oriented.retirement",
+      "source": "amfi_scheme_data",
+      "seen_from": "2026-10"
+    }
+  ]
+}

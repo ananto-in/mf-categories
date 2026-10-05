@@ -4,52 +4,177 @@
   "title": "History",
   "description": "Category lifecycle events. `from` and `to` are always arrays of category IDs.",
   "type": "object",
-  "required": ["events"],
+  "required": [
+    "events"
+  ],
   "additionalProperties": false,
   "properties": {
-    "$schema": { "type": "string" },
+    "$schema": {
+      "type": "string"
+    },
     "events": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["type", "from", "to", "effective", "circular"],
+        "required": [
+          "type",
+          "from",
+          "to",
+          "effective",
+          "circular"
+        ],
         "additionalProperties": false,
         "properties": {
-          "type": { "enum": ["rename", "split", "merge", "replace", "discontinue", "new"] },
+          "type": {
+            "enum": [
+              "rename",
+              "split",
+              "merge",
+              "replace",
+              "discontinue",
+              "new"
+            ]
+          },
           "from": {
             "type": "array",
             "uniqueItems": true,
-            "items": { "type": "string", "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)?$" }
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*){0,2}$"
+            }
           },
           "to": {
             "type": "array",
             "uniqueItems": true,
-            "items": { "type": "string", "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)?$" }
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*){0,2}$"
+            }
           },
-          "effective": { "type": "string", "format": "date" },
-          "circular": { "type": "string", "minLength": 1 },
-          "note": { "type": "string" }
+          "effective": {
+            "type": "string",
+            "format": "date"
+          },
+          "circular": {
+            "type": "string",
+            "minLength": 1
+          },
+          "note": {
+            "type": "string"
+          },
+          "from_name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "rename only: the previous name"
+          },
+          "to_name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "rename only: the new name"
+          }
         },
         "allOf": [
           {
-            "if": { "properties": { "type": { "const": "new" } } },
-            "then": { "properties": { "from": { "maxItems": 0 }, "to": { "minItems": 1 } } }
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "new"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "from": {
+                  "maxItems": 0
+                },
+                "to": {
+                  "minItems": 1
+                }
+              }
+            }
           },
           {
-            "if": { "properties": { "type": { "const": "discontinue" } } },
-            "then": { "properties": { "from": { "minItems": 1 }, "to": { "maxItems": 0 } } }
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "discontinue"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "from": {
+                  "minItems": 1
+                },
+                "to": {
+                  "maxItems": 0
+                }
+              }
+            }
           },
           {
-            "if": { "properties": { "type": { "enum": ["rename", "replace"] } } },
-            "then": { "properties": { "from": { "minItems": 1, "maxItems": 1 }, "to": { "minItems": 1, "maxItems": 1 } } }
+            "if": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "rename",
+                    "replace"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "from": {
+                  "minItems": 1,
+                  "maxItems": 1
+                },
+                "to": {
+                  "minItems": 1,
+                  "maxItems": 1
+                }
+              }
+            }
           },
           {
-            "if": { "properties": { "type": { "const": "split" } } },
-            "then": { "properties": { "from": { "minItems": 1, "maxItems": 1 }, "to": { "minItems": 2 } } }
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "split"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "from": {
+                  "minItems": 1,
+                  "maxItems": 1
+                },
+                "to": {
+                  "minItems": 2
+                }
+              }
+            }
           },
           {
-            "if": { "properties": { "type": { "const": "merge" } } },
-            "then": { "properties": { "from": { "minItems": 2 }, "to": { "minItems": 1, "maxItems": 1 } } }
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "merge"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "from": {
+                  "minItems": 2
+                },
+                "to": {
+                  "minItems": 1,
+                  "maxItems": 1
+                }
+              }
+            }
           }
         ]
       }

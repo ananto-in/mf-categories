@@ -3,15 +3,34 @@
   "$id": "https://github.com/ananto-in/mf-categories/data/schema/meta.schema.json",
   "title": "Meta",
   "type": "object",
-  "required": ["dataset_version", "circular"],
+  "required": [
+    "dataset_version",
+    "circular"
+  ],
   "additionalProperties": false,
   "properties": {
-    "$schema": { "type": "string" },
-    "dataset_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "$schema": {
+      "type": "string"
+    },
+    "dataset_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
     "circular": {
       "description": "ID of the latest circular the dataset reflects (null until the first data release).",
-      "oneOf": [{ "type": "string", "minLength": 1 }, { "type": "null" }]
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
-    "generated_at": { "type": "string", "format": "date" }
+    "generated_at": {
+      "type": "string",
+      "format": "date"
+    }
   }
 }

@@ -1,1 +1,244 @@
-{ "events": [] }
+{
+  "events": [
+    {
+      "type": "new",
+      "from": [],
+      "to": [
+        "equity.flexi_cap"
+      ],
+      "effective": "2020-11-06",
+      "circular": "sebi-2020-11-06"
+    },
+    {
+      "type": "new",
+      "from": [],
+      "to": [
+        "other.fof.equity_diversified",
+        "other.fof.equity_sectoral_thematic",
+        "other.fof.debt_oriented",
+        "other.fof.hybrid_aggressive",
+        "other.fof.hybrid_conservative",
+        "other.fof.hybrid_income_plus_arbitrage",
+        "other.fof.hybrid_dynamic_asset_allocation",
+        "other.fof.hybrid_multi_asset_allocation",
+        "other.fof.commodity_based",
+        "other.fof.overseas_equity_country_specific",
+        "other.fof.overseas_equity_thematic_sector",
+        "other.fof.overseas_equity_region_specific",
+        "other.fof.overseas_debt_country_specific",
+        "other.fof.overseas_debt_region_specific",
+        "other.fof.domestic_overseas_equity_diversified",
+        "other.fof.domestic_overseas_equity_sectoral_thematic",
+        "other.fof.domestic_overseas_debt_oriented"
+      ],
+      "effective": "2025-06-30",
+      "circular": "sebi-2026-02-26",
+      "note": "Standardised framework for FoFs with more than one underlying fund, communicated to AMFI on 30 Jun 2025 and restated as Annexure C of the 2026 circular. Existing FoFs were to be re-categorised by 31 Aug 2025."
+    },
+    {
+      "type": "rename",
+      "from": [
+        "debt.ultra_short_term"
+      ],
+      "to": [
+        "debt.ultra_short_term"
+      ],
+      "effective": "2026-02-26",
+      "circular": "sebi-2026-02-26",
+      "from_name": "Ultra Short Duration Fund",
+      "to_name": "Ultra Short Term Fund"
+    },
+    {
+      "type": "rename",
+      "from": [
+        "debt.ultra_short_to_short_term"
+      ],
+      "to": [
+        "debt.ultra_short_to_short_term"
+      ],
+      "effective": "2026-02-26",
+      "circular": "sebi-2026-02-26",
+      "from_name": "Low Duration Fund",
+      "to_name": "Ultra Short to Short Term Fund",
+      "note": "Successor mapping inferred from the unchanged 6 to 12 month Macaulay duration band."
+    },
+    {
+      "type": "rename",
+      "from": [
+        "debt.short_term"
+      ],
+      "to": [
+        "debt.short_term"
+      ],
+      "effective": "2026-02-26",
+      "circular": "sebi-2026-02-26",
+      "from_name": "Short Duration Fund",
+      "to_name": "Short Term Fund"
+    },
+    {
+      "type": "rename",
+      "from": [
+        "debt.medium_term"
+      ],
+      "to": [
+        "debt.medium_term"
+      ],
+      "effective": "2026-02-26",
+      "circular": "sebi-2026-02-26",
+      "from_name": "Medium Duration Fund",
+      "to_name": "Medium Term Fund"
+    },
+    {
+      "type": "rename",
+      "from": [
+        "debt.medium_to_long_term"
+      ],
+      "to": [
+        "debt.medium_to_long_term"
+      ],
+      "effective": "2026-02-26",
+      "circular": "sebi-2026-02-26",
+      "from_name": "Medium to Long Duration Fund",
+      "to_name": "Medium to Long Term Fund"
+    },
+    {
+      "type": "rename",
+      "from": [
+        "debt.long_term"
+      ],
+      "to": [
+        "debt.long_term"
+      ],
+      "effective": "2026-02-26",
+      "circular": "sebi-2026-02-26",
+      "from_name": "Long Duration Fund",
+      "to_name": "Long Term Fund"
+    },
+    {
+      "type": "rename",
+      "from": [
+        "debt.dynamic_term"
+      ],
+      "to": [
+        "debt.dynamic_term"
+      ],
+      "effective": "2026-02-26",
+      "circular": "sebi-2026-02-26",
+      "from_name": "Dynamic Bond",
+      "to_name": "Dynamic Term Fund"
+    },
+    {
+      "type": "rename",
+      "from": [
+        "debt.banking_and_psu_debt"
+      ],
+      "to": [
+        "debt.banking_and_psu_debt"
+      ],
+      "effective": "2026-02-26",
+      "circular": "sebi-2026-02-26",
+      "from_name": "Banking and PSU Fund",
+      "to_name": "Banking and PSU Debt Fund"
+    },
+    {
+      "type": "rename",
+      "from": [
+        "debt.gilt_10y_constant_maturity"
+      ],
+      "to": [
+        "debt.gilt_10y_constant_maturity"
+      ],
+      "effective": "2026-02-26",
+      "circular": "sebi-2026-02-26",
+      "from_name": "Gilt Fund with 10 year constant duration",
+      "to_name": "10-year Constant Maturity Gilt Fund"
+    },
+    {
+      "type": "rename",
+      "from": [
+        "debt.floating_interest_rates"
+      ],
+      "to": [
+        "debt.floating_interest_rates"
+      ],
+      "effective": "2026-02-26",
+      "circular": "sebi-2026-02-26",
+      "from_name": "Floater Fund",
+      "to_name": "Floating Interest Rates Fund"
+    },
+    {
+      "type": "rename",
+      "from": [
+        "hybrid.dynamic_asset_allocation"
+      ],
+      "to": [
+        "hybrid.dynamic_asset_allocation"
+      ],
+      "effective": "2026-02-26",
+      "circular": "sebi-2026-02-26",
+      "from_name": "Dynamic Asset Allocation or Balanced Advantage",
+      "to_name": "Dynamic Asset Allocation Fund"
+    },
+    {
+      "type": "split",
+      "from": [
+        "equity.sectoral_thematic"
+      ],
+      "to": [
+        "equity.sectoral",
+        "equity.thematic"
+      ],
+      "effective": "2026-02-26",
+      "circular": "sebi-2026-02-26"
+    },
+    {
+      "type": "split",
+      "from": [
+        "equity.value_contra"
+      ],
+      "to": [
+        "equity.value",
+        "equity.contra"
+      ],
+      "effective": "2026-02-26",
+      "circular": "sebi-2026-02-26",
+      "note": "The 2017 framework allowed either Value or Contra, not both; fund houses may now offer both."
+    },
+    {
+      "type": "new",
+      "from": [],
+      "to": [
+        "debt.sectoral"
+      ],
+      "effective": "2026-02-26",
+      "circular": "sebi-2026-02-26"
+    },
+    {
+      "type": "new",
+      "from": [],
+      "to": [
+        "life_cycle",
+        "life_cycle.maturity_5y",
+        "life_cycle.maturity_10y",
+        "life_cycle.maturity_15y",
+        "life_cycle.maturity_20y",
+        "life_cycle.maturity_25y",
+        "life_cycle.maturity_30y"
+      ],
+      "effective": "2026-02-26",
+      "circular": "sebi-2026-02-26"
+    },
+    {
+      "type": "discontinue",
+      "from": [
+        "solution_oriented",
+        "solution_oriented.retirement",
+        "solution_oriented.children"
+      ],
+      "to": [],
+      "effective": "2026-02-26",
+      "circular": "sebi-2026-02-26",
+      "note": "Existing schemes stop all subscriptions and are to be merged with a scheme of similar asset allocation and risk profile, with prior SEBI approval."
+    }
+  ]
+}

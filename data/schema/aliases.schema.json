@@ -4,29 +4,68 @@
   "title": "Aliases",
   "description": "AMFI scheme-data category labels mapped to category IDs.",
   "type": "object",
-  "required": ["aliases"],
+  "required": [
+    "aliases"
+  ],
   "additionalProperties": false,
   "properties": {
-    "$schema": { "type": "string" },
+    "$schema": {
+      "type": "string"
+    },
     "aliases": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["label", "source"],
+        "required": [
+          "label",
+          "source"
+        ],
         "additionalProperties": false,
         "properties": {
-          "label": { "type": "string", "minLength": 1 },
-          "category": { "type": "string", "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)?$" },
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^\\S+( \\S+)*$",
+            "description": "Whitespace-normalised: no leading/trailing or repeated spaces."
+          },
+          "category": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*){0,2}$"
+          },
           "candidates": {
             "type": "array",
             "minItems": 2,
             "uniqueItems": true,
-            "items": { "type": "string", "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)?$" }
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*){0,2}$"
+            }
           },
-          "source": { "enum": ["amfi_scheme_data"] },
-          "seen_from": { "type": "string", "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$" }
+          "source": {
+            "enum": [
+              "amfi_scheme_data"
+            ]
+          },
+          "seen_from": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$"
+          },
+          "note": {
+            "type": "string"
+          }
         },
-        "oneOf": [{ "required": ["category"] }, { "required": ["candidates"] }]
+        "oneOf": [
+          {
+            "required": [
+              "category"
+            ]
+          },
+          {
+            "required": [
+              "candidates"
+            ]
+          }
+        ]
       }
     }
   }

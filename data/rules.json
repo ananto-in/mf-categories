@@ -1,1 +1,985 @@
-{ "rules": [] }
+{
+  "rules": [
+    {
+      "id": "value_contra_overlap",
+      "name": "Value and Contra portfolio overlap",
+      "applies_to": [
+        "equity.value",
+        "equity.contra"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "A fund house may offer both Value and Contra funds if the portfolio overlap between the two does not exceed 50%.",
+      "parameters": {
+        "max_overlap_pct": 50,
+        "between": [
+          "equity.value",
+          "equity.contra"
+        ],
+        "clause": "2.6.3.4"
+      }
+    },
+    {
+      "id": "sectoral_thematic_overlap",
+      "name": "Sectoral/Thematic portfolio overlap",
+      "applies_to": [
+        "equity.sectoral",
+        "equity.thematic"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "No more than 50% of a sectoral/thematic scheme portfolio may overlap with other sectoral/thematic schemes and other equity categories, except Large Cap. Computed quarterly as the average of daily overlap values at ISIN level (Annexure A).",
+      "parameters": {
+        "max_overlap_pct": 50,
+        "exempt_categories": [
+          "equity.large_cap"
+        ],
+        "measurement": {
+          "frequency": "quarterly",
+          "method": "average_of_daily_overlap",
+          "level": "isin",
+          "methodology_annexure": "A"
+        },
+        "existing_schemes_compliance_years": 3,
+        "glide_path_excess_overlap_reduction_pct": [
+          {
+            "year": 1,
+            "pct": 35
+          },
+          {
+            "year": 2,
+            "pct": 35
+          },
+          {
+            "year": 3,
+            "pct": 30
+          }
+        ],
+        "non_compliance_after_deadline": "mandatory_merger",
+        "clauses": [
+          "2.6.3.5",
+          "2.6.3.6",
+          "2.6.3.7",
+          "2.6.3.8"
+        ]
+      }
+    },
+    {
+      "id": "sectoral_thematic_list",
+      "name": "Sector and theme list",
+      "applies_to": [
+        "equity.sectoral",
+        "equity.thematic"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "Funds are launched as per the list of sectors/themes published by AMFI, in consultation with SEBI, updated half yearly.",
+      "parameters": {
+        "list_publisher": "AMFI",
+        "update_frequency": "half_yearly",
+        "clause": "2.6.3.9"
+      }
+    },
+    {
+      "id": "overlap_disclosure",
+      "name": "Category-wise portfolio overlap disclosure",
+      "applies_to": [
+        "equity",
+        "debt",
+        "hybrid"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "Fund houses disclose category-wise portfolio overlap (equity vs other equity, debt vs other debt, hybrid vs other hybrid) on the AMC website every month.",
+      "parameters": {
+        "frequency": "monthly",
+        "publication": "amc_website",
+        "comparisons": [
+          "equity_vs_other_equity",
+          "debt_vs_other_debt",
+          "hybrid_vs_other_hybrid"
+        ],
+        "methodology_annexure": "A",
+        "clause": "2.6.8"
+      }
+    },
+    {
+      "id": "residual_portion_equity",
+      "name": "Residual portion of equity schemes",
+      "applies_to": [
+        "equity"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "The residual portion may be invested in equity, money market and other liquid instruments, gold and silver instruments as permitted by SEBI and in InvITs, subject to the ceilings in MF regulations.",
+      "parameters": {
+        "permitted": [
+          "equity",
+          "money_market_and_liquid_instruments",
+          "gold_and_silver_instruments",
+          "invits"
+        ],
+        "clause": "2.6.3.3"
+      }
+    },
+    {
+      "id": "residual_portion_debt",
+      "name": "Residual portion of debt schemes",
+      "applies_to": [
+        "debt"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "The residual portion may be invested in InvITs, except in Overnight, Liquid, Ultra Short, Low Duration and Money Market funds, subject to the ceilings in MF regulations.",
+      "parameters": {
+        "permitted": [
+          "invits"
+        ],
+        "excluded_categories": [
+          "debt.overnight",
+          "debt.liquid",
+          "debt.ultra_short_term",
+          "debt.ultra_short_to_short_term",
+          "debt.money_market"
+        ],
+        "clause": "2.6.3.14",
+        "note": "The circular names the exclusions with pre-2026 category names (Ultra-Short Duration, Low Duration); mapped here to their successors."
+      }
+    },
+    {
+      "id": "residual_portion_hybrid",
+      "name": "Residual portion of hybrid schemes",
+      "applies_to": [
+        "hybrid"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "The residual portion may be invested in InvITs (except arbitrage funds), ETCDs, Gold ETFs and Silver ETFs, subject to the ceilings in MF regulations.",
+      "parameters": {
+        "permitted": [
+          "invits",
+          "etcds",
+          "gold_etfs",
+          "silver_etfs"
+        ],
+        "excluded_categories_for_invits": [
+          "hybrid.arbitrage"
+        ],
+        "clause": "2.6.3.15"
+      }
+    },
+    {
+      "id": "medium_term_adverse_duration",
+      "name": "Reduced duration in adverse situations",
+      "applies_to": [
+        "debt.medium_term",
+        "debt.medium_to_long_term"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "The fund manager may reduce portfolio duration by up to one year when anticipating adverse interest rate movements. Going below the 3 year / 4 year floors must be justified in writing, placed before the Trustees and reported in the half yearly Trustee report to SEBI.",
+      "parameters": {
+        "max_reduction_years": 1,
+        "floors_years": {
+          "debt.medium_term": 3,
+          "debt.medium_to_long_term": 4
+        },
+        "clauses": [
+          "2.6.3.10",
+          "2.6.3.11"
+        ]
+      }
+    },
+    {
+      "id": "sectoral_debt_conditions",
+      "name": "Sectoral debt fund conditions",
+      "applies_to": [
+        "debt.sectoral"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "Offered only where enough investment grade paper is available for the sector. Sectoral exposure limits under clause 12.9.1 of the Master Circular do not apply.",
+      "parameters": {
+        "master_circular_clause_not_applicable": "12.9.1",
+        "clauses": [
+          "2.6.3.12",
+          "2.6.3.13"
+        ]
+      }
+    },
+    {
+      "id": "macaulay_duration_disclosure",
+      "name": "Macaulay duration disclosure",
+      "applies_to": [
+        "debt"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "The concept of Macaulay duration is explained in the scheme information document, and the duration is stated at portfolio level.",
+      "parameters": {
+        "level": "portfolio",
+        "disclosure": "scheme_information_document"
+      }
+    },
+    {
+      "id": "solution_oriented_discontinuation",
+      "name": "Solution Oriented category discontinued",
+      "applies_to": [
+        "solution_oriented"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "Existing schemes stop all subscriptions with immediate effect and are merged with a scheme of similar asset allocation and risk profile, with prior SEBI approval.",
+      "parameters": {
+        "effective": "2026-02-26",
+        "subscriptions": "stopped",
+        "follow_up": "merger_with_prior_sebi_approval",
+        "clause": "2.6.3.16"
+      }
+    },
+    {
+      "id": "foreign_securities",
+      "name": "Foreign securities",
+      "applies_to": [
+        "hybrid"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "Foreign securities are not treated as a separate asset class.",
+      "parameters": {
+        "separate_asset_class": false,
+        "clause": "2.6.3.17"
+      }
+    },
+    {
+      "id": "scheme_naming",
+      "name": "Scheme name and type description",
+      "applies_to": [
+        "equity",
+        "debt",
+        "hybrid",
+        "life_cycle",
+        "other"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "The scheme name is the same as the scheme category. Words that emphasise only the return aspect are not used. The type of scheme description follows the circular.",
+      "parameters": {
+        "name_equals_category": true,
+        "return_emphasis_words_allowed": false,
+        "clause": "2.6.5"
+      }
+    },
+    {
+      "id": "compliance_timeline",
+      "name": "Compliance timeline for existing schemes",
+      "applies_to": [
+        "equity",
+        "debt",
+        "hybrid",
+        "life_cycle",
+        "other",
+        "solution_oriented"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "Existing schemes align nomenclature, objective, strategy, benchmark and other parameters within 6 months of the circular. Such changes are not fundamental attribute changes.",
+      "parameters": {
+        "months": 6,
+        "deadline": "2026-08-26",
+        "fundamental_attribute_change": false,
+        "clause": "2.6.7"
+      }
+    },
+    {
+      "id": "life_cycle_structure",
+      "name": "Life Cycle Fund structure",
+      "applies_to": [
+        "life_cycle"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "Tenures of 5 to 30 years in multiples of 5. At most 6 funds per fund house may be open for subscription at any time. A fund with under 1 year to maturity may be merged with the nearest maturity Life Cycle Fund with unitholder consent. Below 5 years to maturity, equity arbitrage exposure of up to 50% is allowed on top of the equity range, keeping total equity and equity related exposure at 65% to 75%. ETCDs are based on gold or silver only.",
+      "parameters": {
+        "tenure_years": {
+          "min": 5,
+          "max": 30,
+          "multiple_of": 5
+        },
+        "max_active_funds_per_fund_house": 6,
+        "merge_when_years_to_maturity_below": 1,
+        "merge_requires_unitholder_consent": true,
+        "equity_arbitrage_extra_pct_max": 50,
+        "equity_arbitrage_applies_below_years_to_maturity": 5,
+        "total_equity_pct_with_arbitrage": {
+          "min": 65,
+          "max": 75
+        },
+        "etcd_underlying": [
+          "gold",
+          "silver"
+        ],
+        "annexure": "B"
+      }
+    },
+    {
+      "id": "life_cycle_exit_load",
+      "name": "Life Cycle Fund exit load",
+      "applies_to": [
+        "life_cycle"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "Exit load of 3% within one year of investment, 2% within two years and 1% within three years.",
+      "parameters": {
+        "schedule": [
+          {
+            "within_years": 1,
+            "exit_load_pct": 3
+          },
+          {
+            "within_years": 2,
+            "exit_load_pct": 2
+          },
+          {
+            "within_years": 3,
+            "exit_load_pct": 1
+          }
+        ],
+        "annexure": "B"
+      }
+    },
+    {
+      "id": "life_cycle_benchmark_and_name",
+      "name": "Life Cycle Fund benchmark and name",
+      "applies_to": [
+        "life_cycle"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "Follows the benchmark framework for Multi Asset Allocation Funds. The maturity year is part of the scheme name, for example Life Cycle Fund 2055.",
+      "parameters": {
+        "benchmark_framework": "hybrid.multi_asset_allocation",
+        "name_includes_maturity_year": true,
+        "annexure": "B"
+      }
+    },
+    {
+      "id": "residual_portion_definition",
+      "name": "Residual portion",
+      "applies_to": [
+        "equity",
+        "debt",
+        "hybrid"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "The residual portion is the part of a scheme's corpus not invested in its main, core asset classes as provided in the scheme characteristics.",
+      "parameters": {
+        "clause": "2.6.2"
+      }
+    },
+    {
+      "id": "fof_multi_underlying_framework",
+      "name": "Standardised FoF framework (multiple underlying funds)",
+      "applies_to": [
+        "other.fof"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "Applies to FoFs with more than one underlying fund. Each FoF is launched under one of the Annexure C sub-categories and one of three options. At least 95% of total assets goes into the underlying funds. Existing FoFs beyond the permitted number are grandfathered and cannot add more in that sub-category.",
+      "parameters": {
+        "applies_when": "more_than_one_underlying_fund",
+        "options": {
+          "active": "FOFs investing in multiple active funds",
+          "passive": "FOFs investing in multiple passive funds",
+          "active_and_passive": "FOFs investing in multiple active and passive funds"
+        },
+        "min_investment_in_underlying_pct": 95,
+        "overseas_selection_factors": [
+          "liquidity in such overseas funds",
+          "a certain threshold of collective AUM following the overseas indices of such overseas funds",
+          "compliance of such indices with portfolio concentration norms for passive indices"
+        ],
+        "overseas_underlying_requirement": "exposure in securities as defined under the Securities Contract (Regulation) Act, 1956 and other applicable regulations/guidelines",
+        "additional_regions": "AMFI, in consultation with SEBI, may define additional regions",
+        "existing_fofs": {
+          "recategorise_by": "2025-08-31",
+          "fundamental_attribute_change": false,
+          "above_permitted_number": "grandfathered; no further FoFs may be launched in that sub-category",
+          "merger_option": true,
+          "grandfathering_basis": "request and rationale received from the AMC",
+          "overseas_distinct_term_examples": [
+            "US Treasury 1-3 year",
+            "NASDAQ"
+          ]
+        },
+        "communicated": "2025-06-30",
+        "annexure": "C",
+        "clause": "2.6.4"
+      }
+    },
+    {
+      "id": "fof_scheme_limits",
+      "name": "Number of FoFs a fund house may launch",
+      "applies_to": [
+        "other.fof.equity_diversified",
+        "other.fof.equity_sectoral_thematic",
+        "other.fof.debt_oriented",
+        "other.fof.hybrid_aggressive",
+        "other.fof.hybrid_conservative",
+        "other.fof.hybrid_income_plus_arbitrage",
+        "other.fof.hybrid_dynamic_asset_allocation",
+        "other.fof.hybrid_multi_asset_allocation",
+        "other.fof.commodity_based",
+        "other.fof.overseas_equity_country_specific",
+        "other.fof.overseas_equity_thematic_sector",
+        "other.fof.overseas_equity_region_specific",
+        "other.fof.overseas_debt_country_specific",
+        "other.fof.overseas_debt_region_specific",
+        "other.fof.domestic_overseas_equity_diversified",
+        "other.fof.domestic_overseas_equity_sectoral_thematic",
+        "other.fof.domestic_overseas_debt_oriented"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "Per sub-category and option (active, passive, active and passive) limits from Annexure IV. A null value means the option is not available.",
+      "parameters": {
+        "limits": {
+          "other.fof.equity_diversified": {
+            "active": {
+              "max": 2
+            },
+            "passive": {
+              "max": 2
+            },
+            "active_and_passive": {
+              "max": 2
+            }
+          },
+          "other.fof.equity_sectoral_thematic": {
+            "active": {
+              "max": 1,
+              "per": "sector_or_theme",
+              "multi_sector_max": 1
+            },
+            "passive": {
+              "max": 1,
+              "per": "sector_or_theme",
+              "multi_sector_max": 1
+            },
+            "active_and_passive": {
+              "max": 1,
+              "per": "sector_or_theme",
+              "multi_sector_max": 1
+            }
+          },
+          "other.fof.debt_oriented": {
+            "active": {
+              "max": 2
+            },
+            "passive": {
+              "max": 2
+            },
+            "active_and_passive": {
+              "max": 2
+            }
+          },
+          "other.fof.hybrid_aggressive": {
+            "active": {
+              "max": 1
+            },
+            "passive": {
+              "max": 1
+            },
+            "active_and_passive": {
+              "max": 1
+            }
+          },
+          "other.fof.hybrid_conservative": {
+            "active": {
+              "max": 1
+            },
+            "passive": {
+              "max": 1
+            },
+            "active_and_passive": {
+              "max": 1
+            }
+          },
+          "other.fof.hybrid_income_plus_arbitrage": {
+            "active": {
+              "max": 1
+            },
+            "passive": {
+              "max": 1
+            },
+            "active_and_passive": {
+              "max": 1
+            }
+          },
+          "other.fof.hybrid_dynamic_asset_allocation": {
+            "active": {
+              "max": 1
+            },
+            "passive": {
+              "max": 1
+            },
+            "active_and_passive": {
+              "max": 1
+            }
+          },
+          "other.fof.hybrid_multi_asset_allocation": {
+            "active": {
+              "max": 1
+            },
+            "passive": {
+              "max": 1
+            },
+            "active_and_passive": {
+              "max": 1
+            }
+          },
+          "other.fof.commodity_based": {
+            "active": null,
+            "passive": {
+              "max": 1
+            },
+            "active_and_passive": null
+          },
+          "other.fof.overseas_equity_country_specific": {
+            "active": {
+              "max": 1,
+              "per": "country"
+            },
+            "passive": {
+              "max": 1,
+              "per": "country"
+            },
+            "active_and_passive": {
+              "max": 1,
+              "per": "country"
+            }
+          },
+          "other.fof.overseas_equity_thematic_sector": {
+            "active": {
+              "max": 1,
+              "per": "sector_or_theme",
+              "multi_sector_max": 1
+            },
+            "passive": {
+              "max": 1,
+              "per": "sector_or_theme",
+              "multi_sector_max": 1
+            },
+            "active_and_passive": {
+              "max": 1,
+              "per": "sector_or_theme",
+              "multi_sector_max": 1
+            }
+          },
+          "other.fof.overseas_equity_region_specific": {
+            "active": {
+              "max": 1,
+              "per": "region"
+            },
+            "passive": {
+              "max": 1,
+              "per": "region"
+            },
+            "active_and_passive": {
+              "max": 1,
+              "per": "region"
+            }
+          },
+          "other.fof.overseas_debt_country_specific": {
+            "active": {
+              "max": 1,
+              "per": "country"
+            },
+            "passive": {
+              "max": 1,
+              "per": "country"
+            },
+            "active_and_passive": {
+              "max": 1,
+              "per": "country"
+            }
+          },
+          "other.fof.overseas_debt_region_specific": {
+            "active": {
+              "max": 1,
+              "per": "region"
+            },
+            "passive": {
+              "max": 1,
+              "per": "region"
+            },
+            "active_and_passive": {
+              "max": 1,
+              "per": "region"
+            }
+          },
+          "other.fof.domestic_overseas_equity_diversified": {
+            "active": {
+              "max": 2
+            },
+            "passive": {
+              "max": 2
+            },
+            "active_and_passive": {
+              "max": 2
+            }
+          },
+          "other.fof.domestic_overseas_equity_sectoral_thematic": {
+            "active": {
+              "max": 1,
+              "per": "sector_theme_or_multi_sector"
+            },
+            "passive": {
+              "max": 1,
+              "per": "sector_theme_or_multi_sector"
+            },
+            "active_and_passive": {
+              "max": 1,
+              "per": "sector_theme_or_multi_sector"
+            }
+          },
+          "other.fof.domestic_overseas_debt_oriented": {
+            "active": {
+              "max": 2
+            },
+            "passive": {
+              "max": 2
+            },
+            "active_and_passive": {
+              "max": 2
+            }
+          }
+        },
+        "annexure": "IV"
+      }
+    },
+    {
+      "id": "fof_naming",
+      "name": "FoF scheme naming",
+      "applies_to": [
+        "other.fof.equity_diversified",
+        "other.fof.equity_sectoral_thematic",
+        "other.fof.debt_oriented",
+        "other.fof.hybrid_aggressive",
+        "other.fof.hybrid_conservative",
+        "other.fof.hybrid_income_plus_arbitrage",
+        "other.fof.hybrid_dynamic_asset_allocation",
+        "other.fof.hybrid_multi_asset_allocation",
+        "other.fof.commodity_based",
+        "other.fof.overseas_equity_country_specific",
+        "other.fof.overseas_equity_thematic_sector",
+        "other.fof.overseas_equity_region_specific",
+        "other.fof.overseas_debt_country_specific",
+        "other.fof.overseas_debt_region_specific",
+        "other.fof.domestic_overseas_equity_diversified",
+        "other.fof.domestic_overseas_equity_sectoral_thematic",
+        "other.fof.domestic_overseas_debt_oriented"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "Name templates per sub-category and option from Annexure III. Active, Passive and Omni (active and passive) FOF are the name suffixes.",
+      "parameters": {
+        "templates": {
+          "other.fof.equity_diversified": {
+            "active": [
+              "<<Name of Mutual Fund>> Diversified Equity <<Distinct Keyword>> Active FOF"
+            ],
+            "passive": [
+              "<<Name of Mutual Fund>> Diversified Equity <<Distinct Keyword>> Passive FOF"
+            ],
+            "active_and_passive": [
+              "<<Name of Mutual Fund>> Diversified Equity <<Distinct Keyword>> Omni FOF"
+            ]
+          },
+          "other.fof.equity_sectoral_thematic": {
+            "active": [
+              "<<Name of Mutual Fund>> <<name of sector/theme/multi sector>> Active FOF"
+            ],
+            "passive": [
+              "<<Name of Mutual Fund>> <<name of sector/theme/multi sector>> Passive FOF"
+            ],
+            "active_and_passive": [
+              "<<Name of Mutual Fund>> <<name of sector/theme/multi sector>> Omni FOF"
+            ]
+          },
+          "other.fof.debt_oriented": {
+            "active": [
+              "<<Name of Mutual Fund>> <<name of category of debt fund>> Active FOF",
+              "<<Name of Mutual Fund>> diversified debt <<Distinct Keyword>> Active FOF"
+            ],
+            "passive": [
+              "<<Name of Mutual Fund>> <<name of category of debt fund>> Passive FOF",
+              "<<Name of Mutual Fund>> diversified debt <<Distinct Keyword>> Passive FOF"
+            ],
+            "active_and_passive": [
+              "<<Name of Mutual Fund>> <<name of category of debt fund>> Omni FOF",
+              "<<Name of Mutual Fund>> diversified debt <<Distinct Keyword>> Omni FOF"
+            ]
+          },
+          "other.fof.hybrid_aggressive": {
+            "active": [
+              "<<Name of Mutual Fund>> <<Aggressive Hybrid>> Active FOF"
+            ],
+            "passive": [
+              "<<Name of Mutual Fund>> <<Aggressive Hybrid>> Passive FOF"
+            ],
+            "active_and_passive": [
+              "<<Name of Mutual Fund>> <<Aggressive Hybrid>> Omni FOF"
+            ]
+          },
+          "other.fof.hybrid_conservative": {
+            "active": [
+              "<<Name of Mutual Fund>> <<Conservative Hybrid>> Active FOF"
+            ],
+            "passive": [
+              "<<Name of Mutual Fund>> <<Conservative Hybrid>> Passive FOF"
+            ],
+            "active_and_passive": [
+              "<<Name of Mutual Fund>> <<Conservative Hybrid>> Omni FOF"
+            ]
+          },
+          "other.fof.hybrid_income_plus_arbitrage": {
+            "active": [
+              "<<Name of Mutual Fund>> <<Income plus Arbitrage>> Active FOF"
+            ],
+            "passive": [
+              "<<Name of Mutual Fund>> <<Income plus Arbitrage>> Passive FOF"
+            ],
+            "active_and_passive": [
+              "<<Name of Mutual Fund>> <<Income plus Arbitrage>> Omni FOF"
+            ]
+          },
+          "other.fof.hybrid_dynamic_asset_allocation": {
+            "active": [
+              "<<Name of Mutual Fund>> <<Dynamic Asset Allocation>> Active FOF"
+            ],
+            "passive": [
+              "<<Name of Mutual Fund>> <<Dynamic Asset Allocation>> Passive FOF"
+            ],
+            "active_and_passive": [
+              "<<Name of Mutual Fund>> <<Dynamic Asset Allocation>> Omni FOF"
+            ]
+          },
+          "other.fof.hybrid_multi_asset_allocation": {
+            "active": [
+              "<<Name of Mutual Fund>> <<Multi-Asset>> Active FOF"
+            ],
+            "passive": [
+              "<<Name of Mutual Fund>> <<Multi-Asset>> Passive FOF"
+            ],
+            "active_and_passive": [
+              "<<Name of Mutual Fund>> <<Multi-Asset>> Omni FOF"
+            ]
+          },
+          "other.fof.commodity_based": {
+            "active": null,
+            "passive": [
+              "<<Name of Mutual Fund>> <<Name of commodity/commodities>> Passive FOF"
+            ],
+            "active_and_passive": null
+          },
+          "other.fof.overseas_equity_country_specific": {
+            "active": [
+              "<<Name of Mutual Fund>> <<name of country>> specific Equity Active FOF"
+            ],
+            "passive": [
+              "<<Name of Mutual Fund>> <<name of country>> specific Equity Passive FOF"
+            ],
+            "active_and_passive": [
+              "<<Name of Mutual Fund>> <<name of country>> specific Equity Omni FOF"
+            ]
+          },
+          "other.fof.overseas_equity_thematic_sector": {
+            "active": [
+              "<<Name of Mutual Fund>> <<name of theme/sector>> overseas Equity Active FOF"
+            ],
+            "passive": [
+              "<<Name of Mutual Fund>> <<name of theme/sector>> overseas Equity Passive FOF"
+            ],
+            "active_and_passive": [
+              "<<Name of Mutual Fund>> <<name of theme/sector>> overseas Equity Omni FOF"
+            ]
+          },
+          "other.fof.overseas_equity_region_specific": {
+            "active": [
+              "<<Name of Mutual Fund>> <<name of region>> specific Equity Active FOF"
+            ],
+            "passive": [
+              "<<Name of Mutual Fund>> <<name of region>> specific Equity Passive FOF"
+            ],
+            "active_and_passive": [
+              "<<Name of Mutual Fund>> <<name of region>> specific Equity Omni FOF"
+            ]
+          },
+          "other.fof.overseas_debt_country_specific": {
+            "active": [
+              "<<Name of Mutual Fund>> <<name of country>> specific Debt Active FOF"
+            ],
+            "passive": [
+              "<<Name of Mutual Fund>> <<name of country>> specific Debt Passive FOF"
+            ],
+            "active_and_passive": [
+              "<<Name of Mutual Fund>> <<name of country>> specific Debt Omni FOF"
+            ]
+          },
+          "other.fof.overseas_debt_region_specific": {
+            "active": [
+              "<<Name of Mutual Fund>> <<name of region>> specific Debt Active FOF"
+            ],
+            "passive": [
+              "<<Name of Mutual Fund>> <<name of region>> specific Debt Passive FOF"
+            ],
+            "active_and_passive": [
+              "<<Name of Mutual Fund>> <<name of region>> specific Debt Omni FOF"
+            ]
+          },
+          "other.fof.domestic_overseas_equity_diversified": {
+            "active": [
+              "<<Name of Mutual Fund>> domestic and overseas diversified equity <<Distinct Keyword>> Active FOF"
+            ],
+            "passive": [
+              "<<Name of Mutual Fund>> domestic and overseas diversified equity <<Distinct Keyword>> Passive FOF"
+            ],
+            "active_and_passive": [
+              "<<Name of Mutual Fund>> domestic and overseas diversified equity <<Distinct Keyword>> Omni FOF"
+            ]
+          },
+          "other.fof.domestic_overseas_equity_sectoral_thematic": {
+            "active": [
+              "<<Name of Mutual Fund>> domestic and overseas <<name of sector/theme/multi sector>> Active FOF"
+            ],
+            "passive": [
+              "<<Name of Mutual Fund>> domestic and overseas <<name of sector/theme/multi sector>> Passive FOF"
+            ],
+            "active_and_passive": [
+              "<<Name of Mutual Fund>> domestic and overseas <<name of sector/theme/multi sector>> Omni FOF"
+            ]
+          },
+          "other.fof.domestic_overseas_debt_oriented": {
+            "active": [
+              "<<Name of Mutual Fund>> <<name of category of debt fund>> Active FOF",
+              "<<Name of Mutual Fund>> diversified debt <<Distinct Keyword>> Active FOF"
+            ],
+            "passive": [
+              "<<Name of Mutual Fund>> <<name of category of debt fund>> Passive FOF",
+              "<<Name of Mutual Fund>> diversified debt <<Distinct Keyword>> Passive FOF"
+            ],
+            "active_and_passive": [
+              "<<Name of Mutual Fund>> domestic and overseas <<name of category of debt fund>> Omni FOF",
+              "<<Name of Mutual Fund>> domestic and overseas diversified <<Distinct Keyword>> Omni FOF"
+            ]
+          }
+        },
+        "distinct_keyword_examples": [
+          "Short Duration + Credit Risk",
+          "Overnight+Liquid"
+        ],
+        "cap_naming": "For diversified equity FoFs: if the underlying schemes span up to 2 caps (large + midcap or flexicap + multicap) the names of those caps are used; across more than 2 caps the word \"all cap\" is used.",
+        "annexure": "III"
+      }
+    },
+    {
+      "id": "fof_benchmarks",
+      "name": "FoF benchmarks",
+      "applies_to": [
+        "other.fof.equity_diversified",
+        "other.fof.equity_sectoral_thematic",
+        "other.fof.debt_oriented",
+        "other.fof.hybrid_aggressive",
+        "other.fof.hybrid_conservative",
+        "other.fof.hybrid_income_plus_arbitrage",
+        "other.fof.hybrid_dynamic_asset_allocation",
+        "other.fof.hybrid_multi_asset_allocation",
+        "other.fof.commodity_based",
+        "other.fof.overseas_equity_country_specific",
+        "other.fof.overseas_equity_thematic_sector",
+        "other.fof.overseas_equity_region_specific",
+        "other.fof.overseas_debt_country_specific",
+        "other.fof.overseas_debt_region_specific",
+        "other.fof.domestic_overseas_equity_diversified",
+        "other.fof.domestic_overseas_equity_sectoral_thematic",
+        "other.fof.domestic_overseas_debt_oriented"
+      ],
+      "circular": "sebi-2026-02-26",
+      "summary": "Benchmarks FoFs may use per type, from Annexure II.",
+      "parameters": {
+        "entries": [
+          {
+            "categories": [
+              "other.fof.equity_diversified",
+              "other.fof.equity_sectoral_thematic"
+            ],
+            "options": [
+              "NIFTY 500 TRI",
+              "S&P BSE 500 TRI",
+              "Tier 1 Benchmark closely related to the Theme/factor"
+            ]
+          },
+          {
+            "categories": [
+              "other.fof.debt_oriented"
+            ],
+            "options": [
+              "NIFTY Composite Debt Index A-III",
+              "CRISIL Dynamic Bond A-III Index",
+              "Benchmark close to the duration/credit profile"
+            ]
+          },
+          {
+            "categories": [
+              "other.fof.hybrid_aggressive",
+              "other.fof.hybrid_conservative",
+              "other.fof.hybrid_dynamic_asset_allocation"
+            ],
+            "options": [
+              "Tier 1 Benchmark - Hybrid category"
+            ]
+          },
+          {
+            "categories": [
+              "other.fof.hybrid_income_plus_arbitrage"
+            ],
+            "statement": "Policy framework for composition of benchmark of Income Plus Arbitrage FoF: the benchmark represents both debt and arbitrage schemes in line with the weights of the scheme asset allocation, and each weight is at least the minimum of the asset allocation range of that asset class.",
+            "debt_indices": [
+              "NIFTY Short Duration Debt Index",
+              "NIFTY Composite Debt Index",
+              "CRISIL Short Term Bond Fund Index",
+              "CRISIL 10 year Gilt Index",
+              "CRISIL Composite Bond Fund Index"
+            ],
+            "arbitrage_indices": [
+              "NIFTY 50 Arbitrage",
+              "CRISIL Arbitrage Index"
+            ],
+            "constraints": [
+              "Once a debt or arbitrage index is selected it is not changed ad hoc; a change needs due process including prior intimation/approval of SEBI.",
+              "Once the weights of the underlying debt and arbitrage schemes are decided they are not changed without due process including prior intimation/approval of SEBI.",
+              "Weights follow the Scheme Information Document / investment pattern of the scheme.",
+              "Only the listed indices may be used for the underlying debt and arbitrage components."
+            ]
+          },
+          {
+            "categories": [
+              "other.fof.hybrid_multi_asset_allocation"
+            ],
+            "statement": "As per the policy framework for composition of benchmark of the multi asset allocation fund category."
+          },
+          {
+            "categories": [
+              "other.fof.commodity_based"
+            ],
+            "options": [
+              "Gold + Silver (or any other allowed commodities)"
+            ],
+            "statement": "Weightages of these benchmarks should be at least the minimum of the investment range of that particular underlying fund."
+          },
+          {
+            "categories": [
+              "other.fof.overseas_equity_country_specific",
+              "other.fof.overseas_equity_thematic_sector",
+              "other.fof.overseas_equity_region_specific",
+              "other.fof.overseas_debt_country_specific",
+              "other.fof.overseas_debt_region_specific"
+            ],
+            "statement": "Benchmark of the underlying overseas MF schemes or broad market benchmark or weightages of these benchmarks should be at least the minimum of the investment range/duration/credit profile of that particular overseas underlying fund as per the SID."
+          },
+          {
+            "categories": [
+              "other.fof.domestic_overseas_equity_diversified",
+              "other.fof.domestic_overseas_equity_sectoral_thematic",
+              "other.fof.domestic_overseas_debt_oriented"
+            ],
+            "statement": "Benchmark of the underlying overseas MF schemes or broad market benchmark or weightages of these benchmarks should be at least the minimum of the investment range/duration/credit profile of that particular overseas underlying fund as per the SID."
+          }
+        ],
+        "annexure": "II"
+      }
+    }
+  ]
+}

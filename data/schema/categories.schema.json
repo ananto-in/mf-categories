@@ -3,45 +3,145 @@
   "$id": "https://github.com/ananto-in/mf-categories/data/schema/categories.schema.json",
   "title": "Categories",
   "type": "object",
-  "required": ["categories"],
+  "required": [
+    "categories"
+  ],
   "additionalProperties": false,
   "properties": {
-    "$schema": { "type": "string" },
+    "$schema": {
+      "type": "string"
+    },
     "categories": {
       "type": "array",
-      "items": { "$ref": "#/$defs/category" }
+      "items": {
+        "$ref": "#/$defs/category"
+      }
     }
   },
   "$defs": {
     "id": {
       "type": "string",
-      "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)?$"
+      "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*){0,2}$"
     },
-    "date": { "type": "string", "format": "date" },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
     "range": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "min": { "type": "number" },
-        "max": { "type": "number" }
+        "min": {
+          "type": "number"
+        },
+        "max": {
+          "type": "number"
+        }
       },
-      "anyOf": [{ "required": ["min"] }, { "required": ["max"] }]
+      "anyOf": [
+        {
+          "required": [
+            "min"
+          ]
+        },
+        {
+          "required": [
+            "max"
+          ]
+        }
+      ]
     },
     "category": {
       "type": "object",
-      "required": ["id", "parent", "level", "name", "status", "valid_from", "valid_to", "circular"],
+      "required": [
+        "id",
+        "parent",
+        "level",
+        "name",
+        "status",
+        "valid_from",
+        "valid_to",
+        "circular"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id": { "$ref": "#/$defs/id" },
-        "parent": { "oneOf": [{ "$ref": "#/$defs/id" }, { "type": "null" }] },
-        "level": { "enum": ["broad", "specific"] },
-        "name": { "type": "string", "minLength": 1 },
-        "short_name": { "type": "string", "minLength": 1 },
-        "status": { "enum": ["active", "superseded", "discontinued"] },
-        "valid_from": { "oneOf": [{ "$ref": "#/$defs/date" }, { "type": "null" }] },
-        "valid_to": { "oneOf": [{ "$ref": "#/$defs/date" }, { "type": "null" }] },
-        "circular": { "oneOf": [{ "type": "string", "minLength": 1 }, { "type": "null" }] },
-        "scheme_type_description": { "oneOf": [{ "type": "string" }, { "type": "null" }] },
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "parent": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "level": {
+          "enum": [
+            "broad",
+            "specific",
+            "sub"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "short_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "active",
+            "superseded",
+            "discontinued"
+          ]
+        },
+        "valid_from": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "valid_to": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "circular": {
+          "description": "The circular the recorded name and characteristics are taken from.",
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "scheme_type_description": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
         "characteristics": {
           "type": "object",
           "additionalProperties": false,
@@ -50,12 +150,28 @@
               "type": "array",
               "items": {
                 "type": "object",
-                "required": ["asset", "min_pct", "basis"],
+                "required": [
+                  "asset",
+                  "min_pct",
+                  "basis"
+                ],
                 "additionalProperties": false,
                 "properties": {
-                  "asset": { "type": "string", "minLength": 1 },
-                  "min_pct": { "type": "number", "minimum": 0, "maximum": 100 },
-                  "basis": { "enum": ["total_assets", "net_assets"] }
+                  "asset": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "min_pct": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 100
+                  },
+                  "basis": {
+                    "enum": [
+                      "total_assets",
+                      "net_assets"
+                    ]
+                  }
                 }
               }
             },
@@ -63,24 +179,89 @@
               "type": "array",
               "items": {
                 "type": "object",
-                "required": ["asset", "min_pct", "max_pct"],
+                "required": [
+                  "asset",
+                  "min_pct",
+                  "max_pct"
+                ],
                 "additionalProperties": false,
                 "properties": {
-                  "asset": { "type": "string", "minLength": 1 },
-                  "min_pct": { "type": "number", "minimum": 0, "maximum": 100 },
-                  "max_pct": { "type": "number", "minimum": 0, "maximum": 100 }
+                  "asset": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "min_pct": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 100
+                  },
+                  "max_pct": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 100
+                  }
                 }
               }
             },
-            "macaulay_duration_years": { "$ref": "#/$defs/range" },
-            "max_stocks": { "type": "integer", "minimum": 1 },
-            "strategy": { "type": "string" }
+            "macaulay_duration_years": {
+              "$ref": "#/$defs/range"
+            },
+            "max_stocks": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "strategy": {
+              "type": "string"
+            },
+            "macaulay_duration_years_adverse_conditions": {
+              "$ref": "#/$defs/range"
+            },
+            "permitted_sectors": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "permitted_regions": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
           }
         },
         "former_names": {
           "type": "array",
-          "items": { "type": "string", "minLength": 1 },
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
           "uniqueItems": true
+        },
+        "note": {
+          "type": "string"
+        },
+        "group": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Sub-categories only: the SEBI category the sub-category is listed under (for example a FoF category)."
+        },
+        "description": {
+          "description": "SEBI wording describing the category (classification text for broad categories).",
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
       }
     }

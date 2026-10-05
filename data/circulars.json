@@ -1,1 +1,32 @@
-{ "circulars": [] }
+{
+  "circulars": [
+    {
+      "id": "sebi-2017-10-06",
+      "number": "SEBI/HO/IMD/DF3/CIR/P/2017/114",
+      "title": "Categorization and Rationalization of Mutual Fund Schemes",
+      "date": "2017-10-06",
+      "url": "https://www.sebi.gov.in/legal/circulars/oct-2017/categorization-and-rationalization-of-mutual-fund-schemes_36199.html",
+      "sha256": null
+    },
+    {
+      "id": "sebi-2020-11-06",
+      "number": "SEBI/HO/IMD/DF3/CIR/P/2020/228",
+      "title": "Introduction of \"Flexi Cap Fund\" as a new category under Equity Schemes",
+      "date": "2020-11-06",
+      "url": "https://www.sebi.gov.in/legal/circulars/nov-2020/circular-on-introduction-of-flexi-cap-fund-as-a-new-category-under-equity-schemes_48108.html",
+      "sha256": null
+    },
+    {
+      "id": "sebi-2026-02-26",
+      "number": "HO/24/13/15(2)2026-IMD-RAC4/I/5764/2026",
+      "title": "Categorization and Rationalization of Mutual Fund Schemes",
+      "date": "2026-02-26",
+      "url": "https://www.sebi.gov.in/legal/circulars/feb-2026/categorization-and-rationalization-of-mutual-fund-schemes_99983.html",
+      "sha256": "fd065b178d50f9576cec54cafdffc9a320fe531da6f414e8f40a9301978875d3",
+      "supersedes": [
+        "sebi-2017-10-06",
+        "sebi-2020-11-06"
+      ]
+    }
+  ]
+}

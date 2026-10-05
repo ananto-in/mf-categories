@@ -1,1 +1,592 @@
-{ "glide_paths": [] }
+{
+  "glide_paths": [
+    {
+      "category": "life_cycle.maturity_30y",
+      "circular": "sebi-2026-02-26",
+      "bands": [
+        {
+          "years_to_maturity": {
+            "min": 15,
+            "max": 30
+          },
+          "equity_pct": {
+            "min": 65,
+            "max": 95
+          },
+          "debt_pct": {
+            "min": 5,
+            "max": 25
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          }
+        },
+        {
+          "years_to_maturity": {
+            "min": 10,
+            "max": 15
+          },
+          "equity_pct": {
+            "min": 65,
+            "max": 80
+          },
+          "debt_pct": {
+            "min": 5,
+            "max": 25
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          }
+        },
+        {
+          "years_to_maturity": {
+            "min": 5,
+            "max": 10
+          },
+          "equity_pct": {
+            "min": 50,
+            "max": 65
+          },
+          "debt_pct": {
+            "min": 5,
+            "max": 25
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          }
+        },
+        {
+          "years_to_maturity": {
+            "min": 3,
+            "max": 5
+          },
+          "equity_pct": {
+            "min": 35,
+            "max": 50
+          },
+          "debt_pct": {
+            "min": 25,
+            "max": 50
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          }
+        },
+        {
+          "years_to_maturity": {
+            "min": 1,
+            "max": 3
+          },
+          "equity_pct": {
+            "min": 20,
+            "max": 35
+          },
+          "debt_pct": {
+            "min": 25,
+            "max": 65
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          },
+          "note": "debt limited to AA & above rated instruments with residual maturity less than the target maturity of the scheme"
+        },
+        {
+          "years_to_maturity": {
+            "min": 0,
+            "max": 1
+          },
+          "equity_pct": {
+            "min": 5,
+            "max": 20
+          },
+          "debt_pct": {
+            "min": 25,
+            "max": 65
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          },
+          "note": "debt limited to AA & above rated instruments with residual maturity less than the target maturity of the scheme"
+        }
+      ]
+    },
+    {
+      "category": "life_cycle.maturity_25y",
+      "circular": "sebi-2026-02-26",
+      "bands": [
+        {
+          "years_to_maturity": {
+            "min": 15,
+            "max": 25
+          },
+          "equity_pct": {
+            "min": 65,
+            "max": 95
+          },
+          "debt_pct": {
+            "min": 5,
+            "max": 25
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          }
+        },
+        {
+          "years_to_maturity": {
+            "min": 10,
+            "max": 15
+          },
+          "equity_pct": {
+            "min": 65,
+            "max": 80
+          },
+          "debt_pct": {
+            "min": 5,
+            "max": 25
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          }
+        },
+        {
+          "years_to_maturity": {
+            "min": 5,
+            "max": 10
+          },
+          "equity_pct": {
+            "min": 50,
+            "max": 65
+          },
+          "debt_pct": {
+            "min": 5,
+            "max": 25
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          }
+        },
+        {
+          "years_to_maturity": {
+            "min": 3,
+            "max": 5
+          },
+          "equity_pct": {
+            "min": 35,
+            "max": 50
+          },
+          "debt_pct": {
+            "min": 25,
+            "max": 50
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          }
+        },
+        {
+          "years_to_maturity": {
+            "min": 1,
+            "max": 3
+          },
+          "equity_pct": {
+            "min": 20,
+            "max": 35
+          },
+          "debt_pct": {
+            "min": 25,
+            "max": 65
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          },
+          "note": "debt limited to AA & above rated instruments with residual maturity less than the target maturity of the scheme"
+        },
+        {
+          "years_to_maturity": {
+            "min": 0,
+            "max": 1
+          },
+          "equity_pct": {
+            "min": 5,
+            "max": 20
+          },
+          "debt_pct": {
+            "min": 25,
+            "max": 65
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          },
+          "note": "debt limited to AA & above rated instruments with residual maturity less than the target maturity of the scheme"
+        }
+      ]
+    },
+    {
+      "category": "life_cycle.maturity_20y",
+      "circular": "sebi-2026-02-26",
+      "bands": [
+        {
+          "years_to_maturity": {
+            "min": 15,
+            "max": 20
+          },
+          "equity_pct": {
+            "min": 65,
+            "max": 95
+          },
+          "debt_pct": {
+            "min": 5,
+            "max": 25
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          }
+        },
+        {
+          "years_to_maturity": {
+            "min": 10,
+            "max": 15
+          },
+          "equity_pct": {
+            "min": 65,
+            "max": 80
+          },
+          "debt_pct": {
+            "min": 5,
+            "max": 25
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          }
+        },
+        {
+          "years_to_maturity": {
+            "min": 5,
+            "max": 10
+          },
+          "equity_pct": {
+            "min": 50,
+            "max": 65
+          },
+          "debt_pct": {
+            "min": 5,
+            "max": 25
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          }
+        },
+        {
+          "years_to_maturity": {
+            "min": 3,
+            "max": 5
+          },
+          "equity_pct": {
+            "min": 35,
+            "max": 50
+          },
+          "debt_pct": {
+            "min": 25,
+            "max": 50
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          }
+        },
+        {
+          "years_to_maturity": {
+            "min": 1,
+            "max": 3
+          },
+          "equity_pct": {
+            "min": 20,
+            "max": 35
+          },
+          "debt_pct": {
+            "min": 25,
+            "max": 65
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          },
+          "note": "debt limited to AA & above rated instruments with residual maturity less than the target maturity of the scheme"
+        },
+        {
+          "years_to_maturity": {
+            "min": 0,
+            "max": 1
+          },
+          "equity_pct": {
+            "min": 5,
+            "max": 20
+          },
+          "debt_pct": {
+            "min": 25,
+            "max": 65
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          },
+          "note": "debt limited to AA & above rated instruments with residual maturity less than the target maturity of the scheme"
+        }
+      ]
+    },
+    {
+      "category": "life_cycle.maturity_15y",
+      "circular": "sebi-2026-02-26",
+      "bands": [
+        {
+          "years_to_maturity": {
+            "min": 10,
+            "max": 15
+          },
+          "equity_pct": {
+            "min": 65,
+            "max": 80
+          },
+          "debt_pct": {
+            "min": 5,
+            "max": 25
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          }
+        },
+        {
+          "years_to_maturity": {
+            "min": 5,
+            "max": 10
+          },
+          "equity_pct": {
+            "min": 50,
+            "max": 65
+          },
+          "debt_pct": {
+            "min": 5,
+            "max": 25
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          }
+        },
+        {
+          "years_to_maturity": {
+            "min": 3,
+            "max": 5
+          },
+          "equity_pct": {
+            "min": 35,
+            "max": 50
+          },
+          "debt_pct": {
+            "min": 25,
+            "max": 50
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          }
+        },
+        {
+          "years_to_maturity": {
+            "min": 1,
+            "max": 3
+          },
+          "equity_pct": {
+            "min": 20,
+            "max": 35
+          },
+          "debt_pct": {
+            "min": 25,
+            "max": 65
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          },
+          "note": "debt limited to AA & above rated instruments with residual maturity less than the target maturity of the scheme"
+        },
+        {
+          "years_to_maturity": {
+            "min": 0,
+            "max": 1
+          },
+          "equity_pct": {
+            "min": 5,
+            "max": 20
+          },
+          "debt_pct": {
+            "min": 25,
+            "max": 65
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          },
+          "note": "debt limited to AA & above rated instruments with residual maturity less than the target maturity of the scheme"
+        }
+      ]
+    },
+    {
+      "category": "life_cycle.maturity_10y",
+      "circular": "sebi-2026-02-26",
+      "bands": [
+        {
+          "years_to_maturity": {
+            "min": 5,
+            "max": 10
+          },
+          "equity_pct": {
+            "min": 50,
+            "max": 65
+          },
+          "debt_pct": {
+            "min": 5,
+            "max": 25
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          }
+        },
+        {
+          "years_to_maturity": {
+            "min": 3,
+            "max": 5
+          },
+          "equity_pct": {
+            "min": 35,
+            "max": 50
+          },
+          "debt_pct": {
+            "min": 25,
+            "max": 50
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          }
+        },
+        {
+          "years_to_maturity": {
+            "min": 1,
+            "max": 3
+          },
+          "equity_pct": {
+            "min": 20,
+            "max": 35
+          },
+          "debt_pct": {
+            "min": 25,
+            "max": 65
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          },
+          "note": "debt limited to AA & above rated instruments with residual maturity less than the target maturity of the scheme"
+        },
+        {
+          "years_to_maturity": {
+            "min": 0,
+            "max": 1
+          },
+          "equity_pct": {
+            "min": 5,
+            "max": 20
+          },
+          "debt_pct": {
+            "min": 25,
+            "max": 65
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          },
+          "note": "debt limited to AA & above rated instruments with residual maturity less than the target maturity of the scheme"
+        }
+      ]
+    },
+    {
+      "category": "life_cycle.maturity_5y",
+      "circular": "sebi-2026-02-26",
+      "bands": [
+        {
+          "years_to_maturity": {
+            "min": 3,
+            "max": 5
+          },
+          "equity_pct": {
+            "min": 35,
+            "max": 50
+          },
+          "debt_pct": {
+            "min": 25,
+            "max": 50
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          }
+        },
+        {
+          "years_to_maturity": {
+            "min": 1,
+            "max": 3
+          },
+          "equity_pct": {
+            "min": 20,
+            "max": 35
+          },
+          "debt_pct": {
+            "min": 25,
+            "max": 65
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          },
+          "note": "debt limited to AA & above rated instruments with residual maturity less than the target maturity of the scheme"
+        },
+        {
+          "years_to_maturity": {
+            "min": 0,
+            "max": 1
+          },
+          "equity_pct": {
+            "min": 5,
+            "max": 20
+          },
+          "debt_pct": {
+            "min": 25,
+            "max": 65
+          },
+          "gold_silver_etf_etcd_invit_pct": {
+            "min": 0,
+            "max": 10
+          },
+          "note": "debt limited to AA & above rated instruments with residual maturity less than the target maturity of the scheme"
+        }
+      ]
+    }
+  ]
+}

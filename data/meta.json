@@ -1,1 +1,5 @@
-{ "dataset_version": "0.0.0", "circular": null }
+{
+  "dataset_version": "0.1.0",
+  "circular": "sebi-2026-02-26",
+  "generated_at": "2026-10-05"
+}

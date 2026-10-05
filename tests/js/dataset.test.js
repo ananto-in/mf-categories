@@ -147,6 +147,46 @@ describe('validateDataset', () => {
       expect(errors).toContain('categories.json: id "hybrid.short_term" must start with its parent "debt."');
     });
 
+    it('accepts a sub category under a specific category', () => {
+      const errors = withChange((ds) => {
+        ds.categories.categories.push(
+          category({
+            id: 'debt.short_term.fof_leaf',
+            parent: 'debt.short_term',
+            level: 'sub',
+            name: 'Leaf',
+            group: 'Group',
+          })
+        );
+      });
+      expect(errors).toEqual([]);
+    });
+
+    it('requires a sub category parent to be a specific category', () => {
+      const errors = withChange((ds) => {
+        ds.categories.categories.push(
+          category({ id: 'debt.leaf_x.deep', parent: 'debt', level: 'sub', name: 'Leaf' })
+        );
+      });
+      expect(errors).toContain('categories.json: parent of "debt.leaf_x.deep" must be a specific category');
+    });
+
+    it('requires the right number of id segments for the level', () => {
+      const errors = withChange((ds) => {
+        ds.categories.categories.push(
+          category({ id: 'debt.short_term.x', parent: 'debt', level: 'specific', name: 'Leaf' })
+        );
+      });
+      expect(errors).toContain('categories.json: specific category "debt.short_term.x" must have 2 id segments');
+    });
+
+    it('allows group only on sub categories', () => {
+      const errors = withChange((ds) => {
+        ds.categories.categories[1].group = 'Group';
+      });
+      expect(errors).toContain('categories.json: only sub categories may have a group ("debt.short_term")');
+    });
+
     it('rejects a broad category that has a parent', () => {
       const errors = withChange((ds) => {
         ds.categories.categories[0].parent = 'debt';

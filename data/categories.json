@@ -1,1 +1,1391 @@
-{ "categories": [] }
+{
+  "categories": [
+    {
+      "id": "equity",
+      "parent": null,
+      "level": "broad",
+      "name": "Equity Schemes",
+      "description": "Mutual Fund scheme predominantly investing in equity and equity related instruments",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26"
+    },
+    {
+      "id": "debt",
+      "parent": null,
+      "level": "broad",
+      "name": "Debt Schemes",
+      "description": "Mutual Fund scheme predominantly investing in debt and debt related instruments",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26"
+    },
+    {
+      "id": "hybrid",
+      "parent": null,
+      "level": "broad",
+      "name": "Hybrid Schemes",
+      "description": "Mutual Fund scheme investing in a mix of asset class i.e. equity, debt, InvITs and commodities related instruments as permitted by SEBI",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26"
+    },
+    {
+      "id": "life_cycle",
+      "parent": null,
+      "level": "broad",
+      "name": "Life Cycle Funds",
+      "description": "An open ended fund with a target date maturity following a glide path investing in a mix of asset classes i.e. Equity, Debt, InvITs, ETCDs, Gold & Silver ETF.",
+      "status": "active",
+      "valid_from": "2026-02-26",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26"
+    },
+    {
+      "id": "other",
+      "parent": null,
+      "level": "broad",
+      "name": "Other Schemes",
+      "description": null,
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "note": "SEBI groups Fund of Fund Schemes and Passive Schemes (for example Index Funds / ETFs) under Other Schemes."
+    },
+    {
+      "id": "solution_oriented",
+      "parent": null,
+      "level": "broad",
+      "name": "Solution Oriented Schemes",
+      "description": null,
+      "status": "discontinued",
+      "valid_from": "2017-10-06",
+      "valid_to": "2026-02-26",
+      "circular": "sebi-2017-10-06"
+    },
+    {
+      "id": "equity.multi_cap",
+      "parent": "equity",
+      "level": "specific",
+      "name": "Multi Cap Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended equity scheme investing across large cap, mid cap, small cap stocks",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "equity_and_equity_related",
+            "min_pct": 75,
+            "basis": "total_assets"
+          },
+          {
+            "asset": "large_cap_equity",
+            "min_pct": 25,
+            "basis": "total_assets"
+          },
+          {
+            "asset": "mid_cap_equity",
+            "min_pct": 25,
+            "basis": "total_assets"
+          },
+          {
+            "asset": "small_cap_equity",
+            "min_pct": 25,
+            "basis": "total_assets"
+          }
+        ]
+      }
+    },
+    {
+      "id": "equity.large_cap",
+      "parent": "equity",
+      "level": "specific",
+      "name": "Large Cap Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended equity scheme predominantly investing in large cap stocks",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "large_cap_equity",
+            "min_pct": 80,
+            "basis": "total_assets"
+          }
+        ]
+      }
+    },
+    {
+      "id": "equity.large_mid_cap",
+      "parent": "equity",
+      "level": "specific",
+      "name": "Large & Mid Cap Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended equity scheme investing in both large cap and mid cap stocks.",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "large_cap_equity",
+            "min_pct": 35,
+            "basis": "total_assets"
+          },
+          {
+            "asset": "mid_cap_equity",
+            "min_pct": 35,
+            "basis": "total_assets"
+          }
+        ]
+      }
+    },
+    {
+      "id": "equity.mid_cap",
+      "parent": "equity",
+      "level": "specific",
+      "name": "Mid Cap Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended equity scheme predominantly investing in mid cap stocks",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "mid_cap_equity",
+            "min_pct": 65,
+            "basis": "total_assets"
+          }
+        ]
+      }
+    },
+    {
+      "id": "equity.small_cap",
+      "parent": "equity",
+      "level": "specific",
+      "name": "Small Cap Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended equity scheme predominantly investing in small cap stocks",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "small_cap_equity",
+            "min_pct": 65,
+            "basis": "total_assets"
+          }
+        ]
+      }
+    },
+    {
+      "id": "equity.flexi_cap",
+      "parent": "equity",
+      "level": "specific",
+      "name": "Flexi Cap Fund",
+      "status": "active",
+      "valid_from": "2020-11-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended dynamic equity scheme investing across large cap, mid cap, small cap stocks",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "equity_and_equity_related",
+            "min_pct": 65,
+            "basis": "total_assets"
+          }
+        ]
+      }
+    },
+    {
+      "id": "equity.dividend_yield",
+      "parent": "equity",
+      "level": "specific",
+      "name": "Dividend Yield Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended equity scheme predominantly investing in dividend yielding stocks",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "equity_and_equity_related",
+            "min_pct": 80,
+            "basis": "total_assets"
+          }
+        ],
+        "strategy": "Scheme should predominantly invest in dividend yielding stocks."
+      }
+    },
+    {
+      "id": "equity.value",
+      "parent": "equity",
+      "level": "specific",
+      "name": "Value Fund",
+      "status": "active",
+      "valid_from": "2026-02-26",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended equity scheme following a value investment strategy",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "equity_and_equity_related",
+            "min_pct": 80,
+            "basis": "total_assets"
+          }
+        ],
+        "strategy": "Scheme should follow a value investment strategy."
+      },
+      "note": "Part of the pre-2026 \"Value Fund/Contra Fund\" category (equity.value_contra); a fund house may now offer both."
+    },
+    {
+      "id": "equity.contra",
+      "parent": "equity",
+      "level": "specific",
+      "name": "Contra Fund",
+      "status": "active",
+      "valid_from": "2026-02-26",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended equity scheme following contrarian investment strategy",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "equity_and_equity_related",
+            "min_pct": 80,
+            "basis": "total_assets"
+          }
+        ],
+        "strategy": "Scheme should follow a contrarian investment strategy."
+      },
+      "note": "Part of the pre-2026 \"Value Fund/Contra Fund\" category (equity.value_contra); a fund house may now offer both."
+    },
+    {
+      "id": "equity.focused",
+      "parent": "equity",
+      "level": "specific",
+      "name": "Focused Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended equity scheme investing in maximum 30 stocks (mention where the scheme intends to focus, viz., multi cap, large cap, mid cap, small cap)",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "equity_and_equity_related",
+            "min_pct": 80,
+            "basis": "total_assets"
+          }
+        ],
+        "max_stocks": 30
+      }
+    },
+    {
+      "id": "equity.sectoral",
+      "parent": "equity",
+      "level": "specific",
+      "name": "Sectoral Fund",
+      "status": "active",
+      "valid_from": "2026-02-26",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended equity scheme investing in __ sector (mention the specific sector)",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "sector_equity",
+            "min_pct": 80,
+            "basis": "total_assets"
+          }
+        ]
+      },
+      "note": "Part of the pre-2026 \"Sectoral/Thematic\" category (equity.sectoral_thematic)."
+    },
+    {
+      "id": "equity.thematic",
+      "parent": "equity",
+      "level": "specific",
+      "name": "Thematic Fund",
+      "status": "active",
+      "valid_from": "2026-02-26",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended equity scheme investing in __ theme (mention the specific theme)",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "theme_equity",
+            "min_pct": 80,
+            "basis": "total_assets"
+          }
+        ],
+        "strategy": "A theme may be a combination of two or more sectors."
+      },
+      "note": "Part of the pre-2026 \"Sectoral/Thematic\" category (equity.sectoral_thematic)."
+    },
+    {
+      "id": "equity.elss",
+      "parent": "equity",
+      "level": "specific",
+      "name": "ELSS - Tax Saver Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended scheme with attributes in accordance with Equity Linked Saving Scheme, 2005 notified by Ministry of Finance",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "equity_and_equity_related",
+            "min_pct": 80,
+            "basis": "total_assets"
+          }
+        ]
+      }
+    },
+    {
+      "id": "equity.sectoral_thematic",
+      "parent": "equity",
+      "level": "specific",
+      "name": "Sectoral/Thematic",
+      "status": "superseded",
+      "valid_from": "2017-10-06",
+      "valid_to": "2026-02-26",
+      "circular": "sebi-2017-10-06",
+      "scheme_type_description": null,
+      "note": "Split into equity.sectoral and equity.thematic by the 26-Feb-2026 circular."
+    },
+    {
+      "id": "equity.value_contra",
+      "parent": "equity",
+      "level": "specific",
+      "name": "Value Fund/Contra Fund",
+      "status": "superseded",
+      "valid_from": "2017-10-06",
+      "valid_to": "2026-02-26",
+      "circular": "sebi-2017-10-06",
+      "scheme_type_description": null,
+      "note": "Split into equity.value and equity.contra by the 26-Feb-2026 circular."
+    },
+    {
+      "id": "debt.overnight",
+      "parent": "debt",
+      "level": "specific",
+      "name": "Overnight Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended debt scheme investing in overnight securities",
+      "characteristics": {
+        "strategy": "Investment in overnight securities having maturity of 1 day. Overnight funds can deploy, not exceeding, 5% of the net assets of the scheme in G-secs and/or T-bills with a residual maturity of upto 30 days for the purpose of placing the same as margin and collateral for certain transactions."
+      }
+    },
+    {
+      "id": "debt.liquid",
+      "parent": "debt",
+      "level": "specific",
+      "name": "Liquid Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended liquid scheme",
+      "characteristics": {
+        "strategy": "Investment in only Debt and money market securities with maturity of upto 91 days"
+      }
+    },
+    {
+      "id": "debt.ultra_short_term",
+      "parent": "debt",
+      "level": "specific",
+      "name": "Ultra Short Term Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended ultra-short term debt scheme investing in instruments such that the Macaulay duration of the portfolio is between 3 months to 6 months",
+      "characteristics": {
+        "macaulay_duration_years": {
+          "min": 0.25,
+          "max": 0.5
+        },
+        "strategy": "Investment in Debt & Money Market instruments such that the Macaulay duration of the portfolio is between 3 months to 6 months"
+      },
+      "former_names": [
+        "Ultra Short Duration Fund"
+      ]
+    },
+    {
+      "id": "debt.ultra_short_to_short_term",
+      "parent": "debt",
+      "level": "specific",
+      "name": "Ultra Short to Short Term Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended debt scheme investing in instruments such that the Macaulay duration of the portfolio is between 6 months to 12 months",
+      "characteristics": {
+        "macaulay_duration_years": {
+          "min": 0.5,
+          "max": 1
+        },
+        "strategy": "Investment in Debt & Money Market instruments such that the Macaulay duration of the portfolio is between 6 months to 12 months"
+      },
+      "former_names": [
+        "Low Duration Fund"
+      ],
+      "note": "Treated as the successor of \"Low Duration Fund\" because the Macaulay duration band is unchanged; the circular does not state the mapping."
+    },
+    {
+      "id": "debt.money_market",
+      "parent": "debt",
+      "level": "specific",
+      "name": "Money Market Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended debt scheme investing in money market instruments",
+      "characteristics": {
+        "strategy": "Investment in Money Market instruments having maturity up to 1 year"
+      }
+    },
+    {
+      "id": "debt.short_term",
+      "parent": "debt",
+      "level": "specific",
+      "name": "Short Term Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended short term debt scheme investing in instruments such that the Macaulay duration of the portfolio is between 1 year to 3 years",
+      "characteristics": {
+        "macaulay_duration_years": {
+          "min": 1,
+          "max": 3
+        },
+        "strategy": "Investment in Debt & Money Market instruments such that the Macaulay duration of the portfolio is between 1 year to 3 years"
+      },
+      "former_names": [
+        "Short Duration Fund"
+      ]
+    },
+    {
+      "id": "debt.medium_term",
+      "parent": "debt",
+      "level": "specific",
+      "name": "Medium Term Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended medium term debt scheme investing in instruments such that the Macaulay duration of the portfolio is between 3 years to 4 years",
+      "characteristics": {
+        "macaulay_duration_years": {
+          "min": 3,
+          "max": 4
+        },
+        "macaulay_duration_years_adverse_conditions": {
+          "min": 1,
+          "max": 4
+        },
+        "strategy": "Investment in Debt & Money Market instruments such that the Macaulay duration of the portfolio is between 3 years to 4 years. Portfolio Macaulay duration under anticipated adverse situation is 1 year to 4 years"
+      },
+      "former_names": [
+        "Medium Duration Fund"
+      ]
+    },
+    {
+      "id": "debt.medium_to_long_term",
+      "parent": "debt",
+      "level": "specific",
+      "name": "Medium to Long Term Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended medium term debt scheme investing in instruments such that the Macaulay duration of the portfolio is between 4 years to 7 years",
+      "characteristics": {
+        "macaulay_duration_years": {
+          "min": 4,
+          "max": 7
+        },
+        "macaulay_duration_years_adverse_conditions": {
+          "min": 1,
+          "max": 7
+        },
+        "strategy": "Investment in Debt & Money Market instruments such that the Macaulay duration of the portfolio is between 4 to 7 years. Portfolio Macaulay duration under anticipated adverse situation is 1 year to 7 years"
+      },
+      "former_names": [
+        "Medium to Long Duration Fund"
+      ]
+    },
+    {
+      "id": "debt.long_term",
+      "parent": "debt",
+      "level": "specific",
+      "name": "Long Term Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended debt scheme investing in instruments such that the Macaulay duration of the portfolio is greater than 7 years",
+      "characteristics": {
+        "macaulay_duration_years": {
+          "min": 7
+        },
+        "strategy": "Investment in Debt & Money Market instruments such that the Macaulay duration of the portfolio is greater than 7 years"
+      },
+      "former_names": [
+        "Long Duration Fund"
+      ]
+    },
+    {
+      "id": "debt.dynamic_term",
+      "parent": "debt",
+      "level": "specific",
+      "name": "Dynamic Term Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended dynamic debt scheme investing across duration.",
+      "characteristics": {
+        "strategy": "Investment across duration"
+      },
+      "former_names": [
+        "Dynamic Bond"
+      ]
+    },
+    {
+      "id": "debt.corporate_bond",
+      "parent": "debt",
+      "level": "specific",
+      "name": "Corporate Bond Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended debt scheme predominantly investing in AA+ and above rated corporate bonds",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "corporate_bonds_aa_plus_and_above",
+            "min_pct": 80,
+            "basis": "total_assets"
+          }
+        ],
+        "strategy": "Minimum investment in corporate bonds - 80% of total assets (only in AA+ and above rated corporate bonds)"
+      }
+    },
+    {
+      "id": "debt.credit_risk",
+      "parent": "debt",
+      "level": "specific",
+      "name": "Credit Risk Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended debt scheme predominantly investing in AA and below rated corporate bonds (excluding AA+ rated corporate bonds)",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "corporate_bonds_aa_and_below",
+            "min_pct": 65,
+            "basis": "total_assets"
+          }
+        ],
+        "strategy": "Minimum investment in corporate bonds - 65% of total assets (only in AA and below rated corporate bonds)"
+      }
+    },
+    {
+      "id": "debt.banking_and_psu_debt",
+      "parent": "debt",
+      "level": "specific",
+      "name": "Banking and PSU Debt Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended debt scheme predominantly investing in Debt instruments of banks, Public Sector Undertakings, Public Financial Institutions and Municipal Bonds",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "banks_psu_pfi_municipal_debt",
+            "min_pct": 80,
+            "basis": "total_assets"
+          }
+        ],
+        "strategy": "Minimum investment in Debt instruments of banks, Public Sector Undertakings, Public Financial Institutions and Municipal Bonds - 80% of total assets"
+      },
+      "former_names": [
+        "Banking and PSU Fund"
+      ]
+    },
+    {
+      "id": "debt.gilt",
+      "parent": "debt",
+      "level": "specific",
+      "name": "Gilt Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended debt scheme investing in government securities across maturity",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "g_secs",
+            "min_pct": 80,
+            "basis": "total_assets"
+          }
+        ],
+        "strategy": "Minimum investment in G-secs - 80% of total assets (across maturity)"
+      }
+    },
+    {
+      "id": "debt.gilt_10y_constant_maturity",
+      "parent": "debt",
+      "level": "specific",
+      "name": "10-year Constant Maturity Gilt Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended debt scheme investing in government securities having a constant maturity of 10 years",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "g_secs",
+            "min_pct": 80,
+            "basis": "total_assets"
+          }
+        ],
+        "macaulay_duration_years": {
+          "min": 10,
+          "max": 10
+        },
+        "strategy": "Minimum investment in G-secs - 80% of total assets such that the Macaulay duration of the portfolio is equal to 10 years"
+      },
+      "former_names": [
+        "Gilt Fund with 10 year constant duration"
+      ]
+    },
+    {
+      "id": "debt.floating_interest_rates",
+      "parent": "debt",
+      "level": "specific",
+      "name": "Floating Interest Rates Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended debt scheme predominantly investing in floating rate instruments (including fixed rate instruments converted to floating rate exposures using swaps/derivatives)",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "floating_rate_instruments",
+            "min_pct": 65,
+            "basis": "total_assets"
+          }
+        ],
+        "strategy": "Minimum investment in floating rate instruments (including fixed rate instruments converted to floating rate exposures using swaps/derivatives) - 65% of total assets"
+      },
+      "former_names": [
+        "Floater Fund"
+      ]
+    },
+    {
+      "id": "debt.sectoral",
+      "parent": "debt",
+      "level": "specific",
+      "name": "Sectoral Fund",
+      "status": "active",
+      "valid_from": "2026-02-26",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended debt scheme investing in __ sector (mention the sector)",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "sector_debt_aa_plus_and_above",
+            "min_pct": 80,
+            "basis": "total_assets"
+          }
+        ],
+        "strategy": "Minimum investment in debt & debt related instruments of a particular sector across duration (only in AA+ and above rated corporate bonds) - 80% of total assets",
+        "permitted_sectors": [
+          "Financial Services",
+          "Energy",
+          "Infrastructure",
+          "Housing",
+          "Real Estate"
+        ]
+      }
+    },
+    {
+      "id": "hybrid.conservative_hybrid",
+      "parent": "hybrid",
+      "level": "specific",
+      "name": "Conservative Hybrid Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended hybrid scheme investing predominantly in debt instruments",
+      "characteristics": {
+        "allocation_range": [
+          {
+            "asset": "equity_and_equity_related",
+            "min_pct": 10,
+            "max_pct": 25
+          },
+          {
+            "asset": "debt",
+            "min_pct": 75,
+            "max_pct": 90
+          }
+        ]
+      }
+    },
+    {
+      "id": "hybrid.balanced_hybrid",
+      "parent": "hybrid",
+      "level": "specific",
+      "name": "Balanced Hybrid Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended balanced scheme investing only in equity and debt instruments. No Arbitrage is permitted in this scheme.",
+      "characteristics": {
+        "allocation_range": [
+          {
+            "asset": "equity_and_equity_related",
+            "min_pct": 40,
+            "max_pct": 60
+          },
+          {
+            "asset": "debt",
+            "min_pct": 40,
+            "max_pct": 60
+          }
+        ],
+        "strategy": "No Arbitrage would be permitted in this scheme"
+      }
+    },
+    {
+      "id": "hybrid.aggressive_hybrid",
+      "parent": "hybrid",
+      "level": "specific",
+      "name": "Aggressive Hybrid Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended hybrid scheme investing predominantly in equity and equity related instruments",
+      "characteristics": {
+        "allocation_range": [
+          {
+            "asset": "equity_and_equity_related",
+            "min_pct": 65,
+            "max_pct": 80
+          },
+          {
+            "asset": "debt",
+            "min_pct": 20,
+            "max_pct": 35
+          }
+        ]
+      }
+    },
+    {
+      "id": "hybrid.dynamic_asset_allocation",
+      "parent": "hybrid",
+      "level": "specific",
+      "name": "Dynamic Asset Allocation Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended dynamic asset allocation fund investing in debt and equity instruments only",
+      "characteristics": {
+        "strategy": "Investment in equity/ debt that is managed dynamically"
+      },
+      "former_names": [
+        "Dynamic Asset Allocation or Balanced Advantage"
+      ]
+    },
+    {
+      "id": "hybrid.multi_asset_allocation",
+      "parent": "hybrid",
+      "level": "specific",
+      "name": "Multi Asset Allocation Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended scheme investing in ___,__ ,__ (mention the three different asset classes)",
+      "characteristics": {
+        "strategy": "Invests in at least three asset classes with a minimum allocation of at least 10% each in all three asset classes"
+      }
+    },
+    {
+      "id": "hybrid.arbitrage",
+      "parent": "hybrid",
+      "level": "specific",
+      "name": "Arbitrage Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended scheme investing in arbitrage opportunities. No investment in InvITs permitted.",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "equity_and_equity_related",
+            "min_pct": 65,
+            "basis": "total_assets"
+          }
+        ],
+        "strategy": "Scheme following arbitrage strategy. Asset allocation in case of defensive consideration shall be stated in the SID. Exposure in debt instruments shall be limited to government securities with maturity less than 1 year as well as repo of government bonds only."
+      }
+    },
+    {
+      "id": "hybrid.equity_savings",
+      "parent": "hybrid",
+      "level": "specific",
+      "name": "Equity Savings Fund",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended scheme investing in equity, arbitrage and debt",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "equity_and_equity_related",
+            "min_pct": 65,
+            "basis": "total_assets"
+          },
+          {
+            "asset": "debt",
+            "min_pct": 10,
+            "basis": "total_assets"
+          }
+        ],
+        "allocation_range": [
+          {
+            "asset": "net_equity",
+            "min_pct": 15,
+            "max_pct": 40
+          }
+        ],
+        "strategy": "Maximum Arbitrage exposure has to be stated in the SID. Minimum hedged & unhedged exposure to be stated in the SID. Asset Allocation under defensive considerations may also be stated in the Offer Document"
+      }
+    },
+    {
+      "id": "life_cycle.maturity_5y",
+      "parent": "life_cycle",
+      "level": "specific",
+      "name": "Life Cycle Fund with Maturity of 5 Years",
+      "status": "active",
+      "valid_from": "2026-02-26",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended fund with attributes of pre-determined maturity and glide path for goal based investing.",
+      "note": "SEBI defines a single Life Cycle Funds category with tenures of 5 to 30 years in multiples of 5; this per-tenure name follows the label AMFI publishes."
+    },
+    {
+      "id": "life_cycle.maturity_10y",
+      "parent": "life_cycle",
+      "level": "specific",
+      "name": "Life Cycle Fund with Maturity of 10 Years",
+      "status": "active",
+      "valid_from": "2026-02-26",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended fund with attributes of pre-determined maturity and glide path for goal based investing.",
+      "note": "SEBI defines a single Life Cycle Funds category with tenures of 5 to 30 years in multiples of 5; this per-tenure name follows the label AMFI publishes."
+    },
+    {
+      "id": "life_cycle.maturity_15y",
+      "parent": "life_cycle",
+      "level": "specific",
+      "name": "Life Cycle Fund with Maturity of 15 Years",
+      "status": "active",
+      "valid_from": "2026-02-26",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended fund with attributes of pre-determined maturity and glide path for goal based investing.",
+      "note": "SEBI defines a single Life Cycle Funds category with tenures of 5 to 30 years in multiples of 5; this per-tenure name follows the label AMFI publishes."
+    },
+    {
+      "id": "life_cycle.maturity_20y",
+      "parent": "life_cycle",
+      "level": "specific",
+      "name": "Life Cycle Fund with Maturity of 20 Years",
+      "status": "active",
+      "valid_from": "2026-02-26",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended fund with attributes of pre-determined maturity and glide path for goal based investing.",
+      "note": "SEBI defines a single Life Cycle Funds category with tenures of 5 to 30 years in multiples of 5; this per-tenure name follows the label AMFI publishes."
+    },
+    {
+      "id": "life_cycle.maturity_25y",
+      "parent": "life_cycle",
+      "level": "specific",
+      "name": "Life Cycle Fund with Maturity of 25 Years",
+      "status": "active",
+      "valid_from": "2026-02-26",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended fund with attributes of pre-determined maturity and glide path for goal based investing.",
+      "note": "SEBI defines a single Life Cycle Funds category with tenures of 5 to 30 years in multiples of 5; this per-tenure name follows the label AMFI publishes."
+    },
+    {
+      "id": "life_cycle.maturity_30y",
+      "parent": "life_cycle",
+      "level": "specific",
+      "name": "Life Cycle Fund with Maturity of 30 Years",
+      "status": "active",
+      "valid_from": "2026-02-26",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended fund with attributes of pre-determined maturity and glide path for goal based investing.",
+      "note": "SEBI defines a single Life Cycle Funds category with tenures of 5 to 30 years in multiples of 5; this per-tenure name follows the label AMFI publishes."
+    },
+    {
+      "id": "other.index_funds_etfs",
+      "parent": "other",
+      "level": "specific",
+      "name": "Index Funds / ETFs",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended scheme replicating/ tracking __ index",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "index_securities",
+            "min_pct": 95,
+            "basis": "total_assets"
+          }
+        ],
+        "strategy": "Minimum investment in securities of a particular index (which is being replicated/ tracked) - 95% of total assets"
+      }
+    },
+    {
+      "id": "other.fof",
+      "parent": "other",
+      "level": "specific",
+      "name": "FoFs (Overseas/ Domestic)",
+      "status": "active",
+      "valid_from": "2017-10-06",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": "An open ended fund of fund scheme investing in fund (mention the underlying funds)",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "underlying_funds",
+            "min_pct": 95,
+            "basis": "total_assets"
+          }
+        ],
+        "strategy": "Minimum investment in the underlying fund - 95% of total assets"
+      },
+      "note": "Multi-underlying FoFs are further divided into the sub-categories of Annexure C, which SEBI communicated to AMFI on 30 Jun 2025."
+    },
+    {
+      "id": "other.fof.equity_diversified",
+      "parent": "other.fof",
+      "level": "sub",
+      "name": "Diversified FOF",
+      "group": "Equity oriented FOF (Domestic)",
+      "status": "active",
+      "valid_from": "2025-06-30",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": null,
+      "description": "FOFs that invests in schemes which are based on varied market caps e.g. large-cap, mid-cap, Nifty 100, Nifty 50 etc are allowed under this sub-category and these underlying schemes should not be based on factors like momentum, volatility, etc."
+    },
+    {
+      "id": "other.fof.equity_sectoral_thematic",
+      "parent": "other.fof",
+      "level": "sub",
+      "name": "Sectoral/Thematic FOF",
+      "group": "Equity oriented FOF (Domestic)",
+      "status": "active",
+      "valid_from": "2025-06-30",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": null,
+      "description": "FoF based on a single sector; or a single theme; or Multi-sector."
+    },
+    {
+      "id": "other.fof.debt_oriented",
+      "parent": "other.fof",
+      "level": "sub",
+      "name": "Debt oriented FOF (Domestic)",
+      "group": "Debt oriented FOF (Domestic)",
+      "status": "active",
+      "valid_from": "2025-06-30",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": null,
+      "description": "These FoFs shall invest in domestic debt oriented MF schemes based on different categories of debt schemes as per paragraph 2.6 of Master Circular on Mutual Fund dated June 27, 2024; or a single category of debt schemes as per paragraph 2.6 of Master Circular on Mutual Fund dated June 27, 2024."
+    },
+    {
+      "id": "other.fof.hybrid_aggressive",
+      "parent": "other.fof",
+      "level": "sub",
+      "name": "Aggressive Hybrid FoF",
+      "group": "Hybrid FoF (Domestic)",
+      "status": "active",
+      "valid_from": "2025-06-30",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": null,
+      "description": "Investment in underlying Equity oriented schemes- 65% to 80%; Investment in underlying Debt oriented schemes - 20% to 35%.",
+      "characteristics": {
+        "allocation_range": [
+          {
+            "asset": "equity_oriented_underlying_schemes",
+            "min_pct": 65,
+            "max_pct": 80
+          },
+          {
+            "asset": "debt_oriented_underlying_schemes",
+            "min_pct": 20,
+            "max_pct": 35
+          }
+        ]
+      }
+    },
+    {
+      "id": "other.fof.hybrid_conservative",
+      "parent": "other.fof",
+      "level": "sub",
+      "name": "Conservative Hybrid FoF",
+      "group": "Hybrid FoF (Domestic)",
+      "status": "active",
+      "valid_from": "2025-06-30",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": null,
+      "description": "Investment in underlying Equity oriented schemes- 10% to 25%; Investment in underlying Debt oriented schemes - 75% to 90%.",
+      "characteristics": {
+        "allocation_range": [
+          {
+            "asset": "equity_oriented_underlying_schemes",
+            "min_pct": 10,
+            "max_pct": 25
+          },
+          {
+            "asset": "debt_oriented_underlying_schemes",
+            "min_pct": 75,
+            "max_pct": 90
+          }
+        ]
+      }
+    },
+    {
+      "id": "other.fof.hybrid_income_plus_arbitrage",
+      "parent": "other.fof",
+      "level": "sub",
+      "name": "Income plus Arbitrage FOF",
+      "group": "Hybrid FoF (Domestic)",
+      "status": "active",
+      "valid_from": "2025-06-30",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": null,
+      "description": "Investment in underlying Debt oriented schemes - up to 65%. Balance investment in only arbitrage based underlying schemes.",
+      "characteristics": {
+        "allocation_range": [
+          {
+            "asset": "debt_oriented_underlying_schemes",
+            "min_pct": 0,
+            "max_pct": 65
+          }
+        ],
+        "strategy": "Balance investment in only arbitrage based underlying schemes."
+      }
+    },
+    {
+      "id": "other.fof.hybrid_dynamic_asset_allocation",
+      "parent": "other.fof",
+      "level": "sub",
+      "name": "Dynamic Asset Allocation FoF",
+      "group": "Hybrid FoF (Domestic)",
+      "status": "active",
+      "valid_from": "2025-06-30",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": null,
+      "description": "Investment in equity / debt oriented schemes that are managed dynamically",
+      "characteristics": {
+        "strategy": "Investment in equity / debt oriented schemes that are managed dynamically"
+      }
+    },
+    {
+      "id": "other.fof.hybrid_multi_asset_allocation",
+      "parent": "other.fof",
+      "level": "sub",
+      "name": "Multi Asset Allocation FoF",
+      "group": "Hybrid FoF (Domestic)",
+      "status": "active",
+      "valid_from": "2025-06-30",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": null,
+      "description": "Investment in Equity oriented schemes, Debt oriented schemes + Commodity based schemes* (and any other asset class based scheme as permissible by SEBI from time to time), subject to minimum investment of 10% in each of the three categories of schemes. *currently only gold and silver based passive schemes are allowed to be launched under commodity based schemes.",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "equity_oriented_underlying_schemes",
+            "min_pct": 10,
+            "basis": "total_assets"
+          },
+          {
+            "asset": "debt_oriented_underlying_schemes",
+            "min_pct": 10,
+            "basis": "total_assets"
+          },
+          {
+            "asset": "commodity_based_underlying_schemes",
+            "min_pct": 10,
+            "basis": "total_assets"
+          }
+        ]
+      }
+    },
+    {
+      "id": "other.fof.commodity_based",
+      "parent": "other.fof",
+      "level": "sub",
+      "name": "Commodity based FoF (Domestic)",
+      "group": "Commodity based FoF (Domestic)",
+      "status": "active",
+      "valid_from": "2025-06-30",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": null,
+      "description": "Investment in commodity funds which invest in Gold and/or Silver or any other commodity that may be permitted by SEBI from time to time."
+    },
+    {
+      "id": "other.fof.overseas_equity_country_specific",
+      "parent": "other.fof",
+      "level": "sub",
+      "name": "Country specific Equity FoF",
+      "group": "Overseas FoF: Equity oriented FOF (Overseas)",
+      "status": "active",
+      "valid_from": "2025-06-30",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": null,
+      "description": "FOFs investing in overseas equity oriented schemes that provides exposure to the equity markets of a particular country"
+    },
+    {
+      "id": "other.fof.overseas_equity_thematic_sector",
+      "parent": "other.fof",
+      "level": "sub",
+      "name": "Thematic/Sector based Equity FoF",
+      "group": "Overseas FoF: Equity oriented FOF (Overseas)",
+      "status": "active",
+      "valid_from": "2025-06-30",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": null,
+      "description": "FOFs investing in overseas equity oriented schemes that are based on a single theme/sector"
+    },
+    {
+      "id": "other.fof.overseas_equity_region_specific",
+      "parent": "other.fof",
+      "level": "sub",
+      "name": "Region specific Equity FoF",
+      "group": "Overseas FoF: Equity oriented FOF (Overseas)",
+      "status": "active",
+      "valid_from": "2025-06-30",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": null,
+      "description": "FOFs investing in overseas equity oriented schemes that provides exposure to the equity markets of a particular region",
+      "characteristics": {
+        "permitted_regions": [
+          "ASEAN",
+          "Europe",
+          "Asia",
+          "Asia Pacific",
+          "Africa",
+          "Middle East",
+          "North America",
+          "South America",
+          "Oceania/Australia"
+        ]
+      }
+    },
+    {
+      "id": "other.fof.overseas_debt_country_specific",
+      "parent": "other.fof",
+      "level": "sub",
+      "name": "Country specific Debt FoF",
+      "group": "Overseas FoF: Debt oriented FOF (Overseas)",
+      "status": "active",
+      "valid_from": "2025-06-30",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": null,
+      "description": "FOFs investing in overseas debt oriented schemes that provides exposure to the debt markets of a particular country"
+    },
+    {
+      "id": "other.fof.overseas_debt_region_specific",
+      "parent": "other.fof",
+      "level": "sub",
+      "name": "Region specific Debt FoF",
+      "group": "Overseas FoF: Debt oriented FOF (Overseas)",
+      "status": "active",
+      "valid_from": "2025-06-30",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": null,
+      "description": "FOFs investing in overseas debt oriented schemes that provides exposure to the debt markets of a particular region",
+      "characteristics": {
+        "permitted_regions": [
+          "ASEAN",
+          "Europe",
+          "Asia",
+          "Asia Pacific",
+          "Africa",
+          "Middle East",
+          "North America",
+          "South America",
+          "Oceania/Australia"
+        ]
+      }
+    },
+    {
+      "id": "other.fof.domestic_overseas_equity_diversified",
+      "parent": "other.fof",
+      "level": "sub",
+      "name": "Diversified Equity FOF",
+      "group": "Domestic and Overseas FOF",
+      "status": "active",
+      "valid_from": "2025-06-30",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": null,
+      "description": "FOFs investing in domestic and overseas equity oriented schemes which should not be based on the factors like momentum, quality, etc. Minimum investment in underlying domestic and overseas schemes should be at least 35% each.",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "domestic_underlying_schemes",
+            "min_pct": 35,
+            "basis": "total_assets"
+          },
+          {
+            "asset": "overseas_underlying_schemes",
+            "min_pct": 35,
+            "basis": "total_assets"
+          }
+        ]
+      }
+    },
+    {
+      "id": "other.fof.domestic_overseas_equity_sectoral_thematic",
+      "parent": "other.fof",
+      "level": "sub",
+      "name": "Sectoral/Thematic based Equity FOF",
+      "group": "Domestic and Overseas FOF",
+      "status": "active",
+      "valid_from": "2025-06-30",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": null,
+      "description": "FoF investing in domestic and overseas equity schemes based on a single sector; or a single theme; or Multi-sector. Minimum investment in underlying domestic and overseas schemes should be at least 35% each.",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "domestic_underlying_schemes",
+            "min_pct": 35,
+            "basis": "total_assets"
+          },
+          {
+            "asset": "overseas_underlying_schemes",
+            "min_pct": 35,
+            "basis": "total_assets"
+          }
+        ]
+      }
+    },
+    {
+      "id": "other.fof.domestic_overseas_debt_oriented",
+      "parent": "other.fof",
+      "level": "sub",
+      "name": "Debt oriented FOF",
+      "group": "Domestic and Overseas FOF",
+      "status": "active",
+      "valid_from": "2025-06-30",
+      "valid_to": null,
+      "circular": "sebi-2026-02-26",
+      "scheme_type_description": null,
+      "description": "FOFs investing in domestic and overseas debt oriented schemes. Minimum investment in underlying domestic and overseas schemes should be at least 35% each.",
+      "characteristics": {
+        "min_allocation": [
+          {
+            "asset": "domestic_underlying_schemes",
+            "min_pct": 35,
+            "basis": "total_assets"
+          },
+          {
+            "asset": "overseas_underlying_schemes",
+            "min_pct": 35,
+            "basis": "total_assets"
+          }
+        ]
+      }
+    },
+    {
+      "id": "solution_oriented.retirement",
+      "parent": "solution_oriented",
+      "level": "specific",
+      "name": "Retirement Fund",
+      "status": "discontinued",
+      "valid_from": "2017-10-06",
+      "valid_to": "2026-02-26",
+      "circular": "sebi-2017-10-06",
+      "scheme_type_description": null
+    },
+    {
+      "id": "solution_oriented.children",
+      "parent": "solution_oriented",
+      "level": "specific",
+      "name": "Children's Fund",
+      "status": "discontinued",
+      "valid_from": "2017-10-06",
+      "valid_to": "2026-02-26",
+      "circular": "sebi-2017-10-06",
+      "scheme_type_description": null
+    }
+  ]
+}
