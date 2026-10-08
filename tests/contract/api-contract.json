@@ -1,112 +1,376 @@
 {
   "_comment": "Shared by tests/php/ContractTest.php and tests/js/contract.test.js. Both packages must satisfy every case.",
   "find": [
-    { "id": "debt.short_term", "name": "Short Term Fund", "parent": "debt", "level": "specific", "status": "active" },
-    { "id": "equity", "name": "Equity Schemes", "parent": null, "level": "broad", "status": "active" },
-    { "id": "other.fof.commodity_based", "name": "Commodity based FoF (Domestic)", "parent": "other.fof", "level": "sub", "status": "active" },
-    { "id": "equity.value_contra", "name": "Value Fund/Contra Fund", "parent": "equity", "level": "specific", "status": "superseded" },
-    { "id": "solution_oriented.retirement", "name": "Retirement Fund", "parent": "solution_oriented", "level": "specific", "status": "discontinued" },
-    { "id": "debt.nope", "name": null }
+    {
+      "id": "debt.short_term",
+      "name": "Short Term Fund",
+      "parent": "debt",
+      "level": "specific",
+      "status": "active",
+      "shortName": "Short Term"
+    },
+    {
+      "id": "equity",
+      "name": "Equity Schemes",
+      "parent": null,
+      "level": "broad",
+      "status": "active",
+      "shortName": "Equity"
+    },
+    {
+      "id": "other.fof.commodity_based",
+      "name": "Commodity based FoF (Domestic)",
+      "parent": "other.fof",
+      "level": "sub",
+      "status": "active",
+      "shortName": null
+    },
+    {
+      "id": "equity.value_contra",
+      "name": "Value Fund/Contra Fund",
+      "parent": "equity",
+      "level": "specific",
+      "status": "superseded",
+      "shortName": "Value & Contra"
+    },
+    {
+      "id": "solution_oriented.retirement",
+      "name": "Retirement Fund",
+      "parent": "solution_oriented",
+      "level": "specific",
+      "status": "discontinued",
+      "shortName": "Retirement"
+    },
+    {
+      "id": "debt.nope",
+      "name": null
+    }
   ],
   "children": [
-    { "id": "equity", "count": 15, "includes": ["equity.large_cap", "equity.sectoral_thematic"] },
-    { "id": "debt", "count": 17 },
-    { "id": "other.fof", "count": 17 },
-    { "id": "debt.short_term", "count": 0 },
-    { "id": "nope", "count": 0 }
+    {
+      "id": "equity",
+      "count": 15,
+      "includes": [
+        "equity.large_cap",
+        "equity.sectoral_thematic"
+      ]
+    },
+    {
+      "id": "debt",
+      "count": 17
+    },
+    {
+      "id": "other.fof",
+      "count": 17
+    },
+    {
+      "id": "debt.short_term",
+      "count": 0
+    },
+    {
+      "id": "nope",
+      "count": 0
+    }
   ],
   "isActiveOn": [
-    { "id": "solution_oriented.retirement", "on": "2026-02-25", "active": true },
-    { "id": "solution_oriented.retirement", "on": "2026-02-26", "active": false },
-    { "id": "equity.sectoral", "on": "2026-02-25", "active": false },
-    { "id": "equity.sectoral", "on": "2026-02-26", "active": true },
-    { "id": "equity.flexi_cap", "on": "2020-11-05", "active": false },
-    { "id": "equity.flexi_cap", "on": "2020-11-06", "active": true },
-    { "id": "debt.short_term", "on": "2017-10-05", "active": false },
-    { "id": "debt.short_term", "on": "2017-10-06", "active": true }
+    {
+      "id": "solution_oriented.retirement",
+      "on": "2026-02-25",
+      "active": true
+    },
+    {
+      "id": "solution_oriented.retirement",
+      "on": "2026-02-26",
+      "active": false
+    },
+    {
+      "id": "equity.sectoral",
+      "on": "2026-02-25",
+      "active": false
+    },
+    {
+      "id": "equity.sectoral",
+      "on": "2026-02-26",
+      "active": true
+    },
+    {
+      "id": "equity.flexi_cap",
+      "on": "2020-11-05",
+      "active": false
+    },
+    {
+      "id": "equity.flexi_cap",
+      "on": "2020-11-06",
+      "active": true
+    },
+    {
+      "id": "debt.short_term",
+      "on": "2017-10-05",
+      "active": false
+    },
+    {
+      "id": "debt.short_term",
+      "on": "2017-10-06",
+      "active": true
+    }
   ],
   "active": [
     {
       "on": "2026-02-25",
-      "includes": ["equity.sectoral_thematic", "equity.value_contra", "solution_oriented.retirement", "other.fof.hybrid_aggressive"],
-      "excludes": ["equity.sectoral", "equity.value", "life_cycle", "debt.sectoral"]
+      "includes": [
+        "equity.sectoral_thematic",
+        "equity.value_contra",
+        "solution_oriented.retirement",
+        "other.fof.hybrid_aggressive"
+      ],
+      "excludes": [
+        "equity.sectoral",
+        "equity.value",
+        "life_cycle",
+        "debt.sectoral"
+      ]
     },
     {
       "on": "2026-02-26",
-      "includes": ["equity.sectoral", "equity.contra", "life_cycle.maturity_5y", "debt.sectoral"],
-      "excludes": ["equity.sectoral_thematic", "equity.value_contra", "solution_oriented", "solution_oriented.children"]
+      "includes": [
+        "equity.sectoral",
+        "equity.contra",
+        "life_cycle.maturity_5y",
+        "debt.sectoral"
+      ],
+      "excludes": [
+        "equity.sectoral_thematic",
+        "equity.value_contra",
+        "solution_oriented",
+        "solution_oriented.children"
+      ]
     },
     {
       "on": "2025-06-29",
-      "includes": ["equity.large_cap"],
-      "excludes": ["other.fof.hybrid_aggressive"]
+      "includes": [
+        "equity.large_cap"
+      ],
+      "excludes": [
+        "other.fof.hybrid_aggressive"
+      ]
     },
     {
       "on": "2025-06-30",
-      "includes": ["other.fof.hybrid_aggressive"],
+      "includes": [
+        "other.fof.hybrid_aggressive"
+      ],
       "excludes": []
     }
   ],
-  "invalidDates": ["26/02/2026", "2026-13-01", "2026-02-30", "2026-2-1", "", "tomorrow"],
+  "invalidDates": [
+    "26/02/2026",
+    "2026-13-01",
+    "2026-02-30",
+    "2026-2-1",
+    "",
+    "tomorrow"
+  ],
   "resolveLabel": [
-    { "label": "Income/Debt Oriented Schemes - Short Term Fund", "id": "debt.short_term" },
-    { "label": "Equity Schemes - Thematic Fund", "id": "equity.thematic" },
-    { "label": "Income/Debt Oriented Schemes - Sectoral Fund", "id": "debt.sectoral" },
-    { "label": "Equity Schemes - Sectoral Fund", "id": "equity.sectoral" },
-    { "label": "Equity Schemes - ELSS- Tax Saver Fund", "id": "equity.elss" },
-    { "label": "Income/Debt Oriented Schemes - 10-year Constant Maturity Gilt Fund", "id": "debt.gilt_10y_constant_maturity" },
-    { "label": "Debt Scheme - Low Duration Fund", "id": "debt.ultra_short_to_short_term" },
-    { "label": "Debt Scheme - Dynamic Bond", "id": "debt.dynamic_term" },
-    { "label": "Hybrid Schemes - Balanced Advantage Fund/ Dynamic Asset Allocation", "id": "hybrid.dynamic_asset_allocation" },
-    { "label": "Life Cycle Funds - Life Cycle Fund with Maturity of 30 Years", "id": "life_cycle.maturity_30y" },
-    { "label": "Solution Oriented Schemes ** - Retirement Fund", "id": "solution_oriented.retirement" },
-    { "label": "Other Scheme -  Other   ETFs", "id": "other.index_funds_etfs" },
-    { "label": "  Equity Schemes - Contra Fund  ", "id": "equity.contra" },
-    { "label": "equity schemes - value fund", "id": "equity.value" },
-    { "label": "Equity Scheme - Sectoral/ Thematic", "id": null },
-    { "label": "Close Ended - Something Else", "id": null },
-    { "label": "Income", "id": null },
-    { "label": "", "id": null }
+    {
+      "label": "Income/Debt Oriented Schemes - Short Term Fund",
+      "id": "debt.short_term"
+    },
+    {
+      "label": "Equity Schemes - Thematic Fund",
+      "id": "equity.thematic"
+    },
+    {
+      "label": "Income/Debt Oriented Schemes - Sectoral Fund",
+      "id": "debt.sectoral"
+    },
+    {
+      "label": "Equity Schemes - Sectoral Fund",
+      "id": "equity.sectoral"
+    },
+    {
+      "label": "Equity Schemes - ELSS- Tax Saver Fund",
+      "id": "equity.elss"
+    },
+    {
+      "label": "Income/Debt Oriented Schemes - 10-year Constant Maturity Gilt Fund",
+      "id": "debt.gilt_10y_constant_maturity"
+    },
+    {
+      "label": "Debt Scheme - Low Duration Fund",
+      "id": "debt.ultra_short_to_short_term"
+    },
+    {
+      "label": "Debt Scheme - Dynamic Bond",
+      "id": "debt.dynamic_term"
+    },
+    {
+      "label": "Hybrid Schemes - Balanced Advantage Fund/ Dynamic Asset Allocation",
+      "id": "hybrid.dynamic_asset_allocation"
+    },
+    {
+      "label": "Life Cycle Funds - Life Cycle Fund with Maturity of 30 Years",
+      "id": "life_cycle.maturity_30y"
+    },
+    {
+      "label": "Solution Oriented Schemes ** - Retirement Fund",
+      "id": "solution_oriented.retirement"
+    },
+    {
+      "label": "Other Scheme -  Other   ETFs",
+      "id": "other.index_funds_etfs"
+    },
+    {
+      "label": "  Equity Schemes - Contra Fund  ",
+      "id": "equity.contra"
+    },
+    {
+      "label": "equity schemes - value fund",
+      "id": "equity.value"
+    },
+    {
+      "label": "Equity Scheme - Sectoral/ Thematic",
+      "id": null
+    },
+    {
+      "label": "Close Ended - Something Else",
+      "id": null
+    },
+    {
+      "label": "Income",
+      "id": null
+    },
+    {
+      "label": "",
+      "id": null
+    }
   ],
   "candidatesForLabel": [
-    { "label": "Equity Scheme - Sectoral/ Thematic", "ids": ["equity.sectoral", "equity.thematic"] },
-    { "label": "Equity Schemes - Value Fund", "ids": ["equity.value"] },
-    { "label": "Nothing", "ids": [] }
+    {
+      "label": "Equity Scheme - Sectoral/ Thematic",
+      "ids": [
+        "equity.sectoral",
+        "equity.thematic"
+      ]
+    },
+    {
+      "label": "Equity Schemes - Value Fund",
+      "ids": [
+        "equity.value"
+      ]
+    },
+    {
+      "label": "Nothing",
+      "ids": []
+    }
   ],
   "successors": [
-    { "id": "equity.sectoral_thematic", "ids": ["equity.sectoral", "equity.thematic"] },
-    { "id": "equity.value_contra", "ids": ["equity.value", "equity.contra"] },
-    { "id": "debt.short_term", "ids": [] },
-    { "id": "solution_oriented.retirement", "ids": [] },
-    { "id": "nope", "ids": [] }
+    {
+      "id": "equity.sectoral_thematic",
+      "ids": [
+        "equity.sectoral",
+        "equity.thematic"
+      ]
+    },
+    {
+      "id": "equity.value_contra",
+      "ids": [
+        "equity.value",
+        "equity.contra"
+      ]
+    },
+    {
+      "id": "debt.short_term",
+      "ids": []
+    },
+    {
+      "id": "solution_oriented.retirement",
+      "ids": []
+    },
+    {
+      "id": "nope",
+      "ids": []
+    }
   ],
   "history": [
-    { "id": "debt.short_term", "types": ["rename"] },
-    { "id": "equity.sectoral", "types": ["split"] },
-    { "id": "solution_oriented.children", "types": ["discontinue"] },
-    { "id": "nope", "types": [] }
+    {
+      "id": "debt.short_term",
+      "types": [
+        "rename"
+      ]
+    },
+    {
+      "id": "equity.sectoral",
+      "types": [
+        "split"
+      ]
+    },
+    {
+      "id": "solution_oriented.children",
+      "types": [
+        "discontinue"
+      ]
+    },
+    {
+      "id": "nope",
+      "types": []
+    }
   ],
   "rulesFor": [
     {
       "id": "equity.sectoral",
-      "includes": ["sectoral_thematic_overlap", "overlap_disclosure", "scheme_naming", "compliance_timeline"],
-      "excludes": ["life_cycle_exit_load"]
+      "includes": [
+        "sectoral_thematic_overlap",
+        "overlap_disclosure",
+        "scheme_naming",
+        "compliance_timeline"
+      ],
+      "excludes": [
+        "life_cycle_exit_load"
+      ]
     },
     {
       "id": "other.fof.commodity_based",
-      "includes": ["fof_scheme_limits", "fof_multi_underlying_framework", "scheme_naming"],
-      "excludes": ["overlap_disclosure"]
+      "includes": [
+        "fof_scheme_limits",
+        "fof_multi_underlying_framework",
+        "scheme_naming"
+      ],
+      "excludes": [
+        "overlap_disclosure"
+      ]
     },
-    { "id": "nope", "includes": [], "excludes": [] }
+    {
+      "id": "nope",
+      "includes": [],
+      "excludes": []
+    }
   ],
   "glidePath": [
-    { "id": "life_cycle.maturity_5y", "bands": 3 },
-    { "id": "life_cycle.maturity_30y", "bands": 6 },
-    { "id": "equity.large_cap", "bands": null }
+    {
+      "id": "life_cycle.maturity_5y",
+      "bands": 3
+    },
+    {
+      "id": "life_cycle.maturity_30y",
+      "bands": 6
+    },
+    {
+      "id": "equity.large_cap",
+      "bands": null
+    }
   ],
   "circular": [
-    { "id": "sebi-2026-02-26", "number": "HO/24/13/15(2)2026-IMD-RAC4/I/5764/2026" },
-    { "id": "sebi-2020-11-06", "number": "SEBI/HO/IMD/DF3/CIR/P/2020/228" },
-    { "id": "nope", "number": null }
+    {
+      "id": "sebi-2026-02-26",
+      "number": "HO/24/13/15(2)2026-IMD-RAC4/I/5764/2026"
+    },
+    {
+      "id": "sebi-2020-11-06",
+      "number": "SEBI/HO/IMD/DF3/CIR/P/2020/228"
+    },
+    {
+      "id": "nope",
+      "number": null
+    }
   ]
 }

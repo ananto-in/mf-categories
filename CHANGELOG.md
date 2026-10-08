@@ -18,6 +18,8 @@ history entries are minor; corrections are patches.
   - Cross-category rules: portfolio overlap limits, residual portion permissions, Life Cycle limits and exit load,
     compliance timeline.
   - Circular registry with the checksum of the 2026 circular PDF.
+  - Compact `short_name` labels (for example "Short Term") on every broad and specific category, unique across the dataset;
+    `name` stays SEBI's wording.
   - SEBI's classification wording on the broad categories (`description`) and the definition of the residual portion.
   - 17 Fund of Fund sub-categories (new `sub` level, 3-segment ids under `other.fof`) from Annexure C, with
     allocations, permitted regions (Annexure I), per-fund-house limits (Annexure IV), name templates

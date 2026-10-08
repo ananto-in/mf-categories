@@ -60,7 +60,8 @@ describe('all / find', () => {
   });
 
   it('defaults optional fields to empty values', () => {
-    expect(find('equity')).toMatchObject({ shortName: null, group: null, formerNames: [], characteristics: {} });
+    expect(find('equity')).toMatchObject({ shortName: 'Equity', group: null, formerNames: [], characteristics: {} });
+    expect(find('other.fof.commodity_based').shortName).toBeNull();
   });
 
   it('is immutable', () => {

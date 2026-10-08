@@ -73,6 +73,9 @@ final class ContractTest extends TestCase
             $this->assertSame($case['parent'], $category->parent);
             $this->assertSame($case['level'], $category->level);
             $this->assertSame($case['status'], $category->status);
+            if (array_key_exists('shortName', $case)) {
+                $this->assertSame($case['shortName'], $category->shortName);
+            }
         }
     }
 

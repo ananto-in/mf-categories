@@ -12,6 +12,7 @@ describe('shared API contract', () => {
     expect(category?.name ?? null).toBe(c.name);
     if (c.name !== null) {
       expect(category).toMatchObject({ parent: c.parent, level: c.level, status: c.status });
+      if ('shortName' in c) expect(category.shortName).toBe(c.shortName);
     }
   });
 

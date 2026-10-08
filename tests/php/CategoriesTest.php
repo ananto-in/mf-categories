@@ -95,7 +95,8 @@ final class CategoriesTest extends TestCase
     {
         $category = $this->categories->find('equity');
 
-        $this->assertNull($category?->shortName);
+        $this->assertSame('Equity', $category?->shortName);
+        $this->assertNull($this->categories->find('other.fof.commodity_based')?->shortName);
         $this->assertNull($category?->group);
         $this->assertSame([], $category?->formerNames);
         $this->assertSame([], $category?->characteristics);

@@ -110,6 +110,27 @@ describe('characteristics taken from the circular', () => {
   });
 });
 
+describe('short names', () => {
+  const nonSub = categories.filter((c) => c.level !== 'sub');
+
+  it('gives every broad and specific category a compact label', () => {
+    for (const c of nonSub) expect(c.short_name, c.id).toBeTruthy();
+  });
+
+  it('keeps the label unique across the dataset so it works in a flat list', () => {
+    const names = nonSub.map((c) => c.short_name);
+    expect(new Set(names).size).toBe(names.length);
+  });
+
+  it('is never longer than the SEBI name it abbreviates', () => {
+    for (const c of nonSub) expect(c.short_name.length, c.id).toBeLessThanOrEqual(c.name.length + 4);
+  });
+
+  it('leaves sub-categories to their group and name', () => {
+    for (const c of categories.filter((x) => x.level === 'sub')) expect(c.short_name, c.id).toBeUndefined();
+  });
+});
+
 describe('classification text', () => {
   it('carries the circular wording for the broad categories', () => {
     expect(byId.get('equity').description).toBe(
