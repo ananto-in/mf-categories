@@ -5,6 +5,17 @@
     "license": "MIT",
     "keywords": ["sebi", "amfi", "mutual-funds", "india", "fintech", "open-data"],
     "homepage": "https://github.com/ananto-in/mf-categories",
+    "authors": [
+        {
+            "name": "Deepesh Shah Chheda",
+            "homepage": "https://www.ananto.in",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/ananto-in/mf-categories/issues",
+        "source": "https://github.com/ananto-in/mf-categories"
+    },
     "require": {
         "php": ">=8.1",
         "ext-json": "*"

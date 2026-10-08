@@ -12,7 +12,7 @@ Guidance for AI coding agents (and humans) working in this repository.
 
 ## Project
 
-`mf-categories` is open reference data for Indian mutual fund scheme categories: SEBI's categorization with stable IDs, characteristics, AMFI label aliases and change history. The JSON in `data/` is the single source of truth; the PHP (`src/php`) and JS (`src/js`) packages are thin readers of it. Published names: Composer `ananto-in/mf-categories`, npm `@ananto-in/mf-categories` (`package.json` is `private` until the first release).
+`mf-categories` is open reference data for Indian mutual fund scheme categories: SEBI's categorization with stable IDs, characteristics, AMFI label aliases and change history. The JSON in `data/` is the single source of truth; the PHP (`src/php`) and JS (`src/js`) packages are thin readers of it. Published names: Composer `ananto-in/mf-categories`, npm `@ananto-in/mf-categories` (first release 0.1.0; `composer.json` has no `version`, Packagist reads git tags).
 
 **IDs are the contract.** Category IDs are lowercase dotted slugs (`debt.short_term`), never renamed, reused or removed. A rename changes `name`, never `id`; splits/merges are recorded in `history.json`.
 

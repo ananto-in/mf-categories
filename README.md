@@ -2,7 +2,7 @@
 
 Open reference data for Indian mutual fund scheme categories: SEBI's categorization with stable IDs, characteristics, AMFI label aliases and change history. JSON, with PHP and JS packages.
 
-> **Status: work in progress.** The dataset is being built; nothing is published to Packagist or npm yet.
+> **Version 0.1.0.** Reflects the SEBI circular of 26 February 2026. Maintained by Deepesh Shah Chheda, [ananto.in](https://www.ananto.in).
 
 ## Why
 
@@ -27,10 +27,17 @@ SEBI renames, splits and discontinues scheme categories from time to time (most 
 - **Every fact cites a circular.**
 - **JSON is the source of truth.** The PHP and JS packages only read it.
 
-## Packages (planned)
+## Install
 
-- Composer: `ananto-in/mf-categories`
-- npm: `@ananto-in/mf-categories`
+```bash
+composer require ananto-in/mf-categories   # PHP >= 8.1
+npm install @ananto-in/mf-categories       # Node >= 20.10
+```
+
+- Composer: [`ananto-in/mf-categories`](https://packagist.org/packages/ananto-in/mf-categories)
+- npm: [`@ananto-in/mf-categories`](https://www.npmjs.com/package/@ananto-in/mf-categories)
+
+Releases follow [Semantic Versioning](https://semver.org/); see the [changelog](CHANGELOG.md).
 
 ## API
 

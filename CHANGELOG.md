@@ -6,6 +6,10 @@ history entries are minor; corrections are patches.
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-10-09
+
+First release. Composer `ananto-in/mf-categories` and npm `@ananto-in/mf-categories`, data licensed CC0 and code MIT.
+
 ### Added
 - Repository scaffold: JSON Schemas, dataset validator, wording check, CI skeleton.
 - Dataset reflecting SEBI circular HO/24/13/15(2)2026-IMD-RAC4/I/5764/2026 (26 Feb 2026):

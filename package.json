@@ -1,10 +1,16 @@
 {
   "name": "@ananto-in/mf-categories",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Open reference data for Indian mutual fund scheme categories: SEBI's categorization with stable IDs, characteristics, AMFI label aliases and change history.",
-  "private": true,
   "type": "module",
   "license": "MIT",
+  "author": {
+    "name": "Deepesh Shah Chheda",
+    "url": "https://www.ananto.in"
+  },
+  "bugs": {
+    "url": "https://github.com/ananto-in/mf-categories/issues"
+  },
   "keywords": ["sebi", "amfi", "mutual-funds", "india", "fintech", "open-data"],
   "homepage": "https://github.com/ananto-in/mf-categories",
   "repository": {
